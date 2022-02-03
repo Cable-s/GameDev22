@@ -11,11 +11,11 @@
   <h1 align=center>T3A01 Basic Webpage by Caleb </h1>
 
   <h2>Links!</h2>
-   <a href="https://www.google.com/">Google</a>
+   <a href="https://en.wikipedia.org/wiki/Trollface">History of the Trollface</a>
 
   <hr>
 
-  <p>this is plain text, <b>this is bold</b> <i>this is italics</i></p>
+  <p>this is plain text, <b>this is bold</b> <i>this is italics</i> <b><i>Don't worry mr.Ellis I can do both Bold and italics at the same time!!</b></i></p>
 
   <hr>
   
@@ -23,7 +23,7 @@
    <img width=200 src="troll.png"><br><br>
   
   <h2> Youtube Embedded video </h2>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fCBNazA9Z7o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
   <hr>
 
@@ -73,48 +73,86 @@
      document.getElementById('myDiv01').innerHTML = `
     Functions can be used to do calculations<br>
     <pre>
-     &lt;script&gt;
-      function myFunction(p1, p2) {
-       return p1 * p2;
-      }
-      document.getElementById("demo").innerHTML = myFunction(4, 3);
-     &lt;/script&gt;
+     for example
+      if you make a function called myFunction and put 2 variables in there
+      (p1, p2) and then you can return p1 multiplied by p2
+      you can make myFunction (4, 3) and that will make p1 = 4 and p2 = 3
+      then you can make a id = demo and exectute demo 
+      it will return 12!
     </pre>
      
   `}">
-  <input type=button value="6. events" onclick="{
-     document.getElementById('myDiv01').innerHTML = 'hello world'
-  }">
 
-  <input type=button value="7. arrays" onclick="{
-     document.getElementById('myDiv01').innerHTML = 'hello world'
-  }">
+  <input type=button value="6. Inputs" onclick="{
+     document.getElementById('myDiv01').innerHTML = `
+    Used for inputs that the user can do on a page<br>
+    <pre>
+     for example
+      you can put a &ltinput type=(the type of input you want)&gt 
+      so types of inputs are onClick(), onMouseOver(), onFocus() ect
+    </pre>
+     
+  `}">
+
+  <input type=button value="7. Arrays" onclick="{
+     document.getElementById('myDiv01').innerHTML = `
+    A numbered list of variables<br>
+    <pre>
+     x[0] = 3;
+     x[1] = 6;
+    </pre>
+     
+  `}">
 
   <input type=button value="8. objects" onclick="{
-     document.getElementById('myDiv01').innerHTML = 'hello world'
-  }">
+     document.getElementById('myDiv01').innerHTML = `
+    Objects are used to define containers for external resources<br>
+    <pre>
+     you can use the &ltobject&gt tag to define containers for an external resource
+     using &ltiframe&gt for videos and &ltimg&gt for img
+    </pre>
+     
+  `}">
 
-  <input type=button value="9. classes" onclick="{
-     document.getElementById('myDiv01').innerHTML = 'hello world'
-  }">
+  <input type=button value="9. Classes" onclick="{
+     document.getElementById('myDiv01').innerHTML = `
+    Used to group code together for cleanliness and ease<br>
+    <pre>
+     you can make a div called city and change that div multiple times
+     instead of creating multiple divs for each city
+    </pre>
+     
+  `}">
 
-
-   You do: 2:variables, 3:loops, 5:functions, 6:events, 7:arrays, 8:objects, 9classes<br><br><br>
-
-
-
-   <div id="myDiv01">...</div>
-   </body>
-   </html>
-
-  <input type=button value="9. classes" onclick="{
-     document.getElementById('myDiv01').innerHTML = 'hello world'
-  }">
-
-
-   You do: 2:variables, 3:loops, 5:functions, 6:events, 7:arrays, 8:objects, 9classes<br><br><br>
-
-
+  <input type=button value="?" onclick="{
+     document.getElementById('myDiv01').innerHTML = `
+    <b><i>YOU JUST GOT TROLLED LOLOLOLOLOLOL</b></i><br>
+    <pre>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⠟⠛⠛⠛⠛⠛⣛⣻⣿⣿⣿⣿⣿⣟⣛⣛⣛⠛⠒⠲⠶⠦⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠏⠁⠀⠀⢀⣤⠶⣛⣩⣥⠤⠤⠤⠤⢤⣤⣤⣭⣭⣉⣉⣛⣛⣻⣭⣥⠬⡍⠛⢶⣄⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⠃⠀⠀⣠⡶⢋⡵⢛⡩⠵⠒⠒⠒⠒⠢⡀⠀⠀⠀⠀⠀⢀⣠⠤⠤⠤⢤⣄⠀⠀⠀⠉⠻⣆⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣿⠃⠀⠀⠘⢁⡴⢋⣴⢿⠒⠈⠉⣏⠉⠐⠒⡾⣄⠀⠀⠀⠀⠀⡠⠀⠀⢀⣀⣈⣙⣆⡀⠀⠀⢹⡆⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⣾⠃⠀⠀⠀⠀⠀⢀⠟⣁⠀⠁⢀⣤⣦⣤⡀⠘⠀⢈⣷⡄⠀⠀⠀⣇⠖⠉⠙⠅⠀⠀⠉⠉⠑⢦⡈⣷⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⢠⣾⢿⣧⠤⠤⠤⠄⠀⠖⣿⠀⠃⠀⠀⣿⣿⣿⣿⡗⠀⠐⠁⢸⡇⠀⣀⣰⠉⠠⠀⠀⣰⣶⣷⣶⠀⠀⠀⢱⡈⢻⣦⠀⠀⠀
+⠀⠀⠀⣠⡿⣱⠋⢀⣴⠶⠚⠻⢶⣤⡘⢧⣄⠆⠂⠀⡉⠉⣉⣀⣀⠉⣠⡟⠁⠀⠉⢻⣆⠀⠀⠀⠘⠛⠟⠛⠀⠀⢈⡿⢍⢢⢹⡇⠀⠀
+⠀⠀⢠⣿⠁⡇⢠⣿⠁⠀⢰⣦⡀⠉⠉⠀⠈⠙⠲⠾⠾⠶⠶⠶⠚⠋⠉⠀⠀⠀⠀⢸⣯⡑⠢⢤⣀⣂⣀⣨⠤⠒⠛⠃⠘⡆⡇⡧⠀⠀
+⠀⠀⢸⣿⠀⡇⢸⡇⢠⣴⣾⠋⠛⢷⣦⣀⠀⠀⠀⠠⠤⠤⠴⢠⠶⠒⠀⠀⠀⠀⠀⠀⠉⢿⣦⡀⠀⠀⠀⠀⢸⣷⠀⠀⡼⢡⢣⡇⠀⠀
+⠀⠀⠀⢿⡇⣧⠘⠿⠀⠀⠸⣧⡀⠀⠈⢻⡿⢶⣦⣄⡀⠀⠀⠸⣆⠐⠟⠻⠷⠀⠀⠀⢀⣾⠛⠃⠑⠤⠀⢀⣼⣿⡇⢀⠤⢂⣾⠃⠀⠀
+⠀⠀⠀⠈⢻⣌⠑⠦⠀⠀⠀⢿⣿⣷⣤⣸⣷⡀⠀⠈⠙⠻⢿⣶⣤⣄⣀⡀⠀⠀⠙⠿⠟⠁⠀⠀⢀⣠⡴⣿⠉⣿⣿⠀⠀⣼⠁⠀⠀⠀
+⠀⠀⠀⠀⠀⠙⣷⡀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣶⣤⣀⣀⣼⠁⠀⠈⠉⠙⣿⠛⠛⠻⢿⠿⠛⠛⢻⡇⠀⢸⡀⣹⣿⠀⠀⡏⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⢿⡀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣤⣄⣀⣿⣄⣀⣀⣸⣄⣀⣠⣴⣿⣶⣿⣿⣿⣿⡇⠀⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⢷⡄⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣦⠀⠘⣿⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⣷⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⣄⠘⢷⡀⠘⡟⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣧⡀⠻⣾⡃⠀⠀⠈⠙⢿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣄⠈⠻⣦⡀⠀⠀⡼⠀⠀⠈⠙⠻⣿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⢿⡿⣹⠇⠀⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣷⣄⠈⠛⠷⣼⣇⡀⠀⠀⠀⠀⣿⠀⠀⠀⢸⡇⠀⠀⡿⠀⢸⠇⣘⣧⠟⠀⢀⡿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢷⣄⡀⠀⠙⠻⠷⠶⣶⣾⣿⣤⣀⣠⣿⣄⣀⣴⠷⠶⠿⠿⠟⠋⠀⢀⣾⠃⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠿⣶⣤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣤⡤⠞⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀
+    </pre>
+     
+  `}">
 
    <div id="myDiv01">...</div>
    </body>
