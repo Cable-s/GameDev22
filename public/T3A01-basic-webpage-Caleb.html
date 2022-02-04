@@ -6,7 +6,9 @@
   </style>
  </head>
  <body>
-  <h5> Version 1.15.32</h5>
+
+
+  <h5> Version 0.7.8</h5>
  
   <h1 align=center>T3A01 Basic Webpage by Caleb </h1>
 
@@ -37,43 +39,45 @@
 
   <h2> Write about Ellis' 10 main areas of coding </h3>
 
-  <input type=button value="0. Pseude Code" onclick="{
-     document.getElementById('myDiv01').innerHTML = 'hello world'
-  }">
+<button onclick="myFunction1()">1. Psuedo Code</button>
+<script>
+function myFunction1() {
+  document.getElementById("demo").innerHTML = "Hello Don\'t world";
+}
+</script>
 
-  <input type=button value="1. Input/Output" onclick="{
-     document.getElementById('myDiv01').innerHTML = 'Input adffgdsfsgsdfdfg<br>'
-     +'sdfg<br>sdfg<br>output is...'
-  }">
 
-  <input type=button value="2. variables" onclick="{
-     document.getElementById('myDiv01').innerHTML = `
-    You can add variables by using<br>
-    <pre>
 
-    &ltvar&gt x &ltvar&gt
+<button onclick="myFunction2()">2. Variables</button>
+<script>
+function myFunction2() {
+  document.getElementById("demo").innerHTML = "x = 3";
+}
+</script>
 
-    </pre>
 
-  `}">
 
-    <input type=button value="3. loops" onclick="{
-     document.getElementById('myDiv01').innerHTML = `
-    Loops can be used to loop code<br>
-    <pre>
-     Loops can be done with for, while, or do
-     Example
-     you can make text equal empty quotions
-     you can also make i equal 0, i less than/equal x, iplusplus
-     then you make text plus 'this number is' plus i plus &ltbr&gt
-     when you execute the code it'll write 'this number is i (i will count up to x)'
-    </pre>
-     
-  `}">
+<button onclick="myFunction3()">3. Loops</button>
 
-  
-  <input type=button value="4. Decisions" onclick="{
-     document.getElementById('myDiv01').innerHTML = `
+<script>
+function myFunction3() {
+  document.getElementById("demo").innerHTML = text;
+}
+
+const cars = ["1", "2", "3", "4", "5", "This is looping an array :D"];
+
+let text = "";
+for (let i = 0; i < cars.length; i++) {
+  text += cars[i] + "<br>";
+}
+</script>
+
+
+
+<button onclick="myFunction4()">4. Decisions</button>
+<script>
+function myFunction4() {
+  document.getElementById("demo").innerHTML = `
     Decisions use the if statement to make true
     false variable decisions<br>
    <pre>
@@ -81,67 +85,80 @@
      greeting = \'Good day\';
    }
    </pre>
+   `
+}
+</script>
 
-   `}"><br><br><br>
 
-  
-  <input type=button value="5. functions" onclick="{
-     document.getElementById('myDiv01').innerHTML = `
-    Functions can be used to do calculations<br>
-    <pre>
-     for example
-      if you make a function called myFunction and put 2 variables in there
-      (p1, p2) and then you can return p1 multiplied by p2
-      you can make myFunction (4, 3) and that will make p1 = 4 and p2 = 3
-      then you can make a id = demo and exectute demo 
-      it will return 12!
-    </pre>
-     
-  `}">
 
-  <input type=button value="6. Inputs" onclick="{
-     document.getElementById('myDiv01').innerHTML = `
-    Used for inputs that the user can do on a page<br>
-    <pre>
-     for example
-      you can put a &ltinput type=(the type of input you want)&gt 
-      so types of inputs are onClick(), onMouseOver(), onFocus() ect
-    </pre>
-     
-  `}">
 
-  <input type=button value="7. Arrays" onclick="{
-     document.getElementById('myDiv01').innerHTML = `
-    A numbered list of variables<br>
-    <pre>
-     x[0] = 3;
-     x[1] = 6;
-    </pre>
-     
-  `}">
+<button onclick="myFunction5()">5. Functions</button>
+<script>
+function myFunction5() {
+  document.getElementById("demo").innerHTML = `
+   <pre>
+   Function document.getElementById('name').innerHTML = ___
+   </pre>
+   `
+}
+</script>
 
-  <input type=button value="8. objects" onclick="{
-     document.getElementById('myDiv01').innerHTML = `
-    Objects are used to define containers for external resources<br>
-    <pre>
-     you can use the &ltobject&gt tag to define containers for an external resource
-     using &ltiframe&gt for videos and &ltimg&gt for img
-    </pre>
-     
-  `}">
 
-  <input type=button value="9. Classes" onclick="{
-     document.getElementById('myDiv01').innerHTML = `
-    Used to group code together for cleanliness and ease<br>
-    <pre>
-     you can make a div called city and change that div multiple times
-     instead of creating multiple divs for each city
-    </pre>
-     
-  `}">
+
+
+<button onclick="myFunction6()">6. Arrays</button>
+<script>
+function myFunction6() {
+  document.getElementById("demo").innerHTML = `
+   <pre>
+   x[0] = 3;    
+   x[1] = 6;
+   </pre>
+   `
+}
+</script>
+
+
+
+
+<button onclick="myFunction7()">7. Objects</button>
+<script>
+function myFunction7() {
+  document.getElementById("demo").innerHTML = `  
+
+  x = {age:17, name:'Caleb'}   // sets object <br>
+  x.age    <br>
+  x.name`
+}
+</script>
+
+
+
+
+<button onclick="myFunction8()">8. Events</button>
+<script>
+function myFunction8() {
+  document.getElementById("demo").innerHTML = `
+   Onclick(), onMouseOver(), onBlur() etc
+`
+}
+</script>
+
+
+
+
+<button onclick="myFunction9()">9. Classes</button>
+<script>
+function myFunction9() {
+  document.getElementById("demo").innerHTML = `
+     methods    --> functions <br>
+     properties --> variables
+     `
+}
+</script>
 
   <input type=button value="?" onclick="{
-     document.getElementById('myDiv01').innerHTML = `
+     document.getElementById('demo').innerHTML = `
     <b><i>YOU JUST GOT TROLLED LOLOLOLOLOLOL</b></i><br>
     <pre>
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⠟⠛⠛⠛⠛⠛⣛⣻⣿⣿⣿⣿⣿⣟⣛⣛⣛⠛⠒⠲⠶⠦⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -170,6 +187,6 @@
      
   `}">
 
-   <div id="myDiv01">...</div>
+<p id="demo"></p>
    </body>
    </html>
