@@ -2,6 +2,13 @@
 <head>
 <style> 
 
+#div2 {
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
 body { background-color: #ae5183; }
 
 .div1 {
@@ -15,6 +22,31 @@ body { background-color: #ae5183; }
   100%   {left:200px; top:0px;}
 }
 </style>
+
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  var newNode = document.getElementById(data).cloneNode(true);
+
+  clearChildren(event.target)
+  ev.target.appendChild(document.getElementById(data));
+} 
+
+function clearChildren(el) {
+ while (el.firstChild) {
+  el.removeChild(el.firstChild);
+ }
+}
+</script>
 </head>
 <body>
 <h5>Version 0.3.6</h5>
@@ -51,17 +83,17 @@ body { background-color: #ae5183; }
 <b>Assignment</b>. You make a list inside a list of 
 multiple items<br>
 
-<ul>
+<ol>
  <li>A</li>
  <li>B</li>
  <li>C</li>
-  <ol>
+  <ul>
     <li>C1</li>
     <li>C2</li>
     <li>C3</li>
-  </ol>
+  </ul>
  <li>D</li>
-</ul>
+</ol>
 
 <table border=1>
 <tr><td></td><td>Trollface</td><td>Desription</td><td></td></tr>
@@ -91,11 +123,106 @@ multiple items<br>
 <tr><td>1</td><td>2</td></tr>
 </table><br>
 
+<table border=0>
+<tr>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag1" src="brook.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag2" src="bknight.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag3" src="bbishop.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag4" src="bqueen.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag5" src="bking.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag6" src="bbishop.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag7" src="bknight.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag8" src="brook.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+</tr>
+
+<tr>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag9" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag10" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag11" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag12" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag13" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag14" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag15" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag16" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+</tr>
+
+<tr>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+</tr>
+
+<tr>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+</tr>
+
+<tr>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+
+</tr>
+
+<tr>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+
+</tr>
+
+<tr>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag17" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag18" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag19" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag20" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag21" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag22" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag23" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag24" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+</tr>
+
+<tr>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag25" src="wrook.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag26" src="wknight.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag27" src="wbishop.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag28" src="wqueen.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag29" src="wking.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag30" src="wbishop.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag31" src="wknight.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag32" src="wrook.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
+</tr>
+</table
 
 <b>Assignment</b> Make a 3 x 4 table,
  then make a link and image table with border = 0<br><br><br>
 
 <h2>Advanced</h2>
+
+<br>
+<img id="drag1" src="trollArab.png" draggable="true" ondragstart="drag(event)" width="336" height="69">
+<br>
 
 Load an image and get it to <b>slide <i>continuously</i></b> 200 pixles back and forth<br>
 
