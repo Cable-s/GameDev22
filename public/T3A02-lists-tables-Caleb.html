@@ -36,20 +36,22 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   var newNode = document.getElementById(data).cloneNode(true);
-
+  
   clearChildren(event.target)
   ev.target.appendChild(document.getElementById(data));
-} 
+}  
 
 function clearChildren(el) {
  while (el.firstChild) {
   el.removeChild(el.firstChild);
  }
 }
+
+
 </script>
 </head>
 <body>
-<h5>Version 0.3.6</h5>
+<h5>Version 1.8.9</h5>
 
 <h1 align=center>T1A02-Lists-and-tables-by-Fred</h1>
 
@@ -123,9 +125,12 @@ multiple items<br>
 <tr><td>1</td><td>2</td></tr>
 </table><br>
 
+<h2>Troll Chess</h2>
+<h3>This form of chess, you die when you take a piece</h3>
+
 <table border=0>
 <tr>
- <td>1</td>
+ <td>8</td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag1" src="brook.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag2" src="bknight.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag3" src="bbishop.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
@@ -137,7 +142,7 @@ multiple items<br>
 </tr>
 
 <tr>
- <td>2</td>
+ <td>7</td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag9" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag10" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag11" src="bpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
@@ -149,7 +154,7 @@ multiple items<br>
 </tr>
 
 <tr>
-  <td>3</td>
+  <td>6</td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
@@ -158,22 +163,22 @@ multiple items<br>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
-</tr>
-
-<tr>
-  <td>4</td>
- <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
- <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
- <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
- <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
- <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
- <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
- <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
- <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
 </tr>
 
 <tr>
   <td>5</td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+ <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+</tr>
+
+<tr>
+  <td>4</td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
@@ -186,7 +191,7 @@ multiple items<br>
 </tr>
 
 <tr>
- <td>6</td>
+ <td>3</td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
@@ -199,7 +204,7 @@ multiple items<br>
 </tr>
 
 <tr>
-  <td>7</td>
+  <td>2</td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag17" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag18" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag19" src="wpawn.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
@@ -211,7 +216,7 @@ multiple items<br>
 </tr>
 
 <tr>
-  <td>8</td>
+  <td>1</td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag25" src="wrook.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
  <td><div style="background:#fbc482" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag26" src="wknight.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
  <td><div style="background:#935204" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag27" src="wbishop.png" draggable="true" ondragstart="drag(event)" width="45" height="45"></div></td>
