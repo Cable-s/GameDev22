@@ -1,0 +1,86 @@
+<html>
+ <head>
+  <style>
+  </style>
+ </head>
+ <body>
+
+  <h1 align=center>t1303-forms-Caleb.html</h1>
+  <font color=blue>Caleb's Amazing Questionaire</font>
+
+  The following are all form elements (add to them):<br>
+  <form >
+  <p>First lets get teh basic info
+   Enter Your First Name:<input type=text id="myText01" value=".."><br>
+   Enter your age:<input type=text id="Age" value=".."><br>
+   
+   <p>select a troll</p>
+    troll <input type=radio name="troll" value=""><br>
+    troll <input type=radio name="troll"value=""><br>
+    troll <input type=radio name="troll" value=""><br>
+    troll <input type=radio name="troll"value=""><br>
+    troll <input type=radio name="troll" value=""><br><br>
+
+<script>
+    let hour = new Date().getHours();
+let Eth;
+  if (hour < 20) {
+    Eth = "Good day";
+  } else {
+    Eth = "Good evening";
+  }
+document.getElementById("demo").innerHTML = Eth;
+</script>
+
+
+    <br>
+    Beef:<input type=checkbox><br>
+    Veggy: <input type=checkbox><br><br>
+
+   hidden:<input type=hidden><br>
+   File:<input type=file><br>
+   reset:<input type =reset><br>
+
+<form action="/https://trollface.dk/">
+  <label for="username">name: </label>
+  <input type="text" id="username" name="username"><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  if (id="username" = 'troll') {
+   window.location.href = "https://trollface.dk/";
+  }
+  else {
+   return
+</script>
+
+   Button: <input type=button value="click" onclick="{
+      document.getElementById('myArea01').value = 'Cool'
+   }"><br>
+
+   <script>
+    if (document.getElementById('myArea01').value = 'troll') {
+     document.getElementById('img1').innerHTML = 'trolled'
+    }
+   </script>
+
+<p id="img1"></p>
+
+  Textarea:<br>
+   <textarea id="myArea01" cols=60 rows=5 >wow</textarea><br>
+
+  Select Box:<BR>
+   <select id="mySelect01" size=2>
+    <option value='myOne'>One
+    <option value='myTwo'>Two
+    <option value='myThree'>Three
+   </select>
+   </form>
+
+ </body>
+</html>
+
+
+
