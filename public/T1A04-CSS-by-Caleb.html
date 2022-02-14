@@ -1,0 +1,69 @@
+<htlm>
+ <head>
+  <style>
+
+.div1 {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: 
+    myfirst 2s;
+    linear 1s;
+    alternate;
+    
+}
+
+@keyframes myfirst {
+  0%    {left:0px; top:0px;}
+  20%   {left:200px; top:0px;}
+  40%   {left:0px; top:200px}
+  60%   {transform: rotate( 45deg ) scale( 1 );}
+  80%   {transform: rotate( -90deg ) scale( 2 );}
+}
+
+
+</style>
+</head>
+<body>
+Version 0.0.4</br>
+<h1 align=center>T1A04 CSS by Fred</h1>
+
+Reference Link 
+<a href="https://www.w3schools.com/cssref/default.asp">w3schools</a><br>
+
+Properly done with a .css file listing all css commands for your
+website<br>
+Another way to do CSS (Cascading Style Sheets: determine colors 
+locations extra effects on the tags on your web page)<br>
+
+Here is  typical in document style
+<pre>
+b {
+  color: #00ff00;
+}
+</pre><br>
+
+I do CSS inside the tag. It overpowers all other methods<br>
+
+<b > This is bold</b><br>
+<b id="myB1" style="color:#00ff00; background-Color:blue; "> This is bold</b>
+<input type=button value=Change onclick="{
+    document.getElementById('myB1').style.color = 'red'
+    document.getElementById('myB1').style.backgroundColor = 'yellow'
+}"><br>
+
+
+
+<textarea id="move" style="position:relative; left:0; top:0; width:200; height:50; ">
+Advanced see if you move this textarea
+</textarea><br>
+
+<input type=button value="Let the sliding commence" onclick="{
+   document.getElementById('move').className = 'div1'
+}">
+<button onClick="window.location.reload();">Refresh Page</button>
+
+</body>
+</html>
+
+
