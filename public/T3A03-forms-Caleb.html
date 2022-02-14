@@ -1,10 +1,24 @@
 <html>
  <head>
   <style>
+body {background-color: #1ecbe1}
+
+#img-preview {
+  display: none; 
+  width: 155px;   
+  border: 2px dashed #333;  
+  margin-bottom: 20px;
+}
+#img-preview img {  
+  width: 100%;
+  height: auto; 
+  display: block;   
+}
+
   </style>
  </head>
  <body>
-
+<h5>Version 1.0.0
   <h1 align=center>t1303-forms-Caleb.html</h1>
   <font color=blue>Caleb's Amazing Questionaire</font>
 
@@ -32,18 +46,48 @@ let Eth;
 document.getElementById("demo").innerHTML = Eth;
 </script>
 
+<p> what are the best name for a 'capybara'</p>
+    Capybara:<input type=checkbox><br>
+    Hydrochoerus hydrochaeris:<input type=checkbox><br>
+    Carpincho:<input type=checkbox><br>
+    Sus Hydrochaeris:<input type=checkbox><br>
+    Coconut Doggy:<input type=checkbox><br>
+    Capy:<input type=checkbox><br>
+    Clarence:<input type=checkbox><br>
+    Beef:<input type=checkbox><br><br>
 
-    <br>
-    Beef:<input type=checkbox><br>
-    Veggy: <input type=checkbox><br><br>
+   hidden:<input type=hidden><br><br>
 
-   hidden:<input type=hidden><br>
-   File:<input type=file><br>
+  <div>
+    <div id="img-preview"></div>
+    <label for="choose-file">Choose File (it will display your image)</label>
+    <input type="file" accept="image/*" id="choose-file" name="choose-file" />
+  </div>
+
+<script>
+ const chooseFile = document.getElementById("choose-file");
+ const imgPreview = document.getElementById("img-preview");
+
+ chooseFile.addEventListener("change", function () {
+  getImgData();
+ });
+
+function getImgData() {
+  const files = chooseFile.files[0];
+  if (files) {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(files);
+    fileReader.addEventListener("load", function () {
+      imgPreview.style.display = "block";
+      imgPreview.innerHTML = '<img src="' + this.result + '" />';
+    });    
+  }
+}
+</script>
+<br>
    reset:<input type =reset><br>
 
 <form action="/https://trollface.dk/">
-  <label for="username">name: </label>
-  <input type="text" id="username" name="username"><br>
 
   <input type="submit" value="Submit">
 </form>
