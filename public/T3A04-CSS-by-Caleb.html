@@ -52,7 +52,11 @@ I do CSS inside the tag. It overpowers all other methods<br>
     document.getElementById('myB1').style.backgroundColor = 'yellow'
 }"><br>
 
-
+<script>
+function myReload() {
+  window.location.reload();
+}
+</script>
 
 <textarea id="move" style="position:relative; left:0; top:0; width:200; height:50; ">
 Advanced see if you move this textarea
@@ -61,7 +65,8 @@ Advanced see if you move this textarea
 
 
 <input type=button value="Let the sliding commence" onclick="{
-   document.getElementById('move').className = 'div1'
+   document.getElementById('move').className = 'div1';
+   setTimeout(myReload, 3000);
  }">
 
 <button onClick="window.location.reload();">Refresh Page</button>
