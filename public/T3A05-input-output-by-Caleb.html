@@ -1,8 +1,15 @@
 
 
-Version 0.1.2
+<html>
+<head>
+<style>
+ body {background-color: #FF00FF}
+</style>
+</head>
+<body>
+Version 1.4.2
 
-<h2 align=center>t1a05-input output by Fred</h2>
+<h2 align=center>T3A05-input output by Caleb</h2>
 
 <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp">Good reference to input putput 
 Javascript innerHTML value by Fred</a>
@@ -15,9 +22,9 @@ Javascript innerHTML value by Fred</a>
 
 <h4> Example working code</h4>
 
-<input id="myNum01" type=number value="4" ><br> 
+<input id="myNum01" type=number value="0" ><br> 
 
-<input type=button value="myEvent squares" onclick="{
+<input type=button value="Square the Number" onclick="{
     let myIn01 = parseFloat(document.getElementById('myNum01').value)
     let myAnswer = myIn01 * myIn01
     document.getElementById('myDiv01').innerHTML = 
@@ -26,4 +33,66 @@ Javascript innerHTML value by Fred</a>
 
 <div id="myDiv01">...</div>
 
+
+<input id="myNum02" type=number value="0" ><br> 
+<input type=button value="find the Square Root (round to 2 decimal places)" onclick="{
+    let myIn02 = parseFloat(document.getElementById('myNum02').value)
+    let myAnswer2 = Math.sqrt(myIn02).toFixed(2)
+    document.getElementById('myDiv02').innerHTML = 
+      ' the square root of ' + myIn02 + ' = ' + myAnswer2
+}"><br>
+
+<div id="myDiv02">..</div>
+
+<h3>Simple Calculator</h3>
+
+<pre>Input 1    Input 2</pre>
+<input id="Input1" type=number value="" style="width: 75px" ><input id="Input2" type=number value="" style="width: 75px"><br> 
+
+<input type=button value="+" onclick="{
+    let Num1 = parseFloat(document.getElementById('Input1').value)
+    let Num2 = parseFloat(document.getElementById('Input2').value)
+    let myAns1 = Num1 + Num2
+    document.getElementById('Out1').innerHTML = 
+       'the Answer is ' + myAns1
+}">
+
+<input type=button value="-" onclick="{
+    let Num1 = parseFloat(document.getElementById('Input1').value)
+    let Num2 = parseFloat(document.getElementById('Input2').value)
+    let myAns1 = Num1 - Num2
+    document.getElementById('Out1').innerHTML = 
+       'the Answer is ' + myAns1
+}">
+
+<input type=button value="*" onclick="{
+    let Num1 = parseFloat(document.getElementById('Input1').value)
+    let Num2 = parseFloat(document.getElementById('Input2').value)
+    let myAns1 = Num1 * Num2
+    document.getElementById('Out1').innerHTML = 
+       'the Answer is ' + myAns1
+}">
+
+<input type=button value="/" onclick="{
+    let Num1 = parseFloat(document.getElementById('Input1').value)
+    let Num2 = parseFloat(document.getElementById('Input2').value)
+    let myAns1 = (Num1 / Num2).toFixed(4)
+    document.getElementById('Out1').innerHTML = 
+       'the Answer is ' + myAns1
+}"><br>
+
+
+
+
+
+
+
+
+
+
+
+<div id="Out1"></div>
+
+</body>
+</html>
 
