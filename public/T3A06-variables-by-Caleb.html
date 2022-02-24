@@ -1,6 +1,15 @@
+<html>
+<head>
+<style>
+body {background-color: #3FF0FF
+</style>
+</head>
+<body>
+
+
 Version 0.0.1
 
-<h2 align=center>t1a06-varaibles-by-Fred.html</h2>
+<h2 align=center>T1A06-varaibles-by-Caleb.html</h2>
 
 <a href="">You Fix: Good reference to Variables in Javascript 
 and other languages</a><br>
@@ -34,5 +43,39 @@ For Global variables Mr. Ellis prefers to use document.myVarName
 }"><br>
 
 <div id="myDiv01">...</div>
+
+<h3>Mad Libs</h3>
+
+A Name              <input id="myText02" type=text value=" " ><br> 
+An company name       <input id="myText03" type=text value=" " ><br> 
+A peice of clothing        	    <input id="myText04" type=text value=" " ><br> 
+An item (plural)     	    <input id="myText05" type=text value=" " ><br> 
+
+
+<input type=button value="Generate" onclick="{
+    let clothing = document.getElementById('myText04').value
+    let agency = document.getElementById('myText03').value
+    let name = document.getElementById('myText02').value
+    let item = document.getElementById('myText05').value
+    document.getElementById('d34').innerHTML = 
+name + 
+' in the flesh. Or rather, in the hazard '
+ +clothing+ 
+'. I took the liberty of relieving you of your '
++item+
+' most of them were ' 
++agency+ 
+' property. As for the ' 
++clothing+ 
+', I think youve earned it.'
+
+
+}"><br>
+
+<div id="d34">...</div>
+
+
+</body>
+</html>
 
 
