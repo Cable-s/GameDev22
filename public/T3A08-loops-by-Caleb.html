@@ -26,15 +26,11 @@ Max loops: <input id="myNum01" type=number value="4" ><br>
 <input type=button value="Basic For loop with Decisions" onclick="{
     document.getElementById('myDiv01').innerHTML = ''
     let myTemp = ''
-
     let myMax = parseInt(document.getElementById('myNum01').value)
-
     for (let myLoop = 0; myLoop < myMax; myLoop++ ){
-
        if (myLoop * 2 > myMax){
           myTemp += ' cool '
       }
-
       myTemp += 'Loop number: ' + myLoop + '<br>'
     }
     document.getElementById('myDiv01').innerHTML = myTemp 
@@ -55,15 +51,11 @@ Max loops: <input id="myNum01" type=number value="4" ><br>
 <input type=button value="Even number identifier" onclick="{
     document.getElementById('myDiv01').innerHTML = ''
     let myTemp = ''
-
     let myMax = parseInt(document.getElementById('myNum01').value)
-
     for (let myLoop = 0; myLoop < myMax; myLoop++ ){
-
        if (myLoop % 2 == 0){
           myTemp += '<font style=\'color:red;\'> Even </font>'
       }
-
       myTemp += 'Loop number: ' + myLoop + '<br>'
     }
     document.getElementById('myDiv01').innerHTML = myTemp 
@@ -73,15 +65,11 @@ Max loops: <input id="myNum01" type=number value="4" ><br>
 <input type=button value="Odd number identifier" onclick="{
     document.getElementById('myDiv01').innerHTML = ''
     let myTemp = ''
-
     let myMax = parseInt(document.getElementById('myNum01').value)
-
     for (let myLoop = 0; myLoop < myMax; myLoop++ ){
-
        if (myLoop % 2 == 1){
           myTemp += '<font style=\'color:red;\'> Odd </font>'
       }
-
       myTemp += 'Loop number: ' + myLoop + '<br>'
     }
     document.getElementById('myDiv01').innerHTML = myTemp 
@@ -90,15 +78,11 @@ Max loops: <input id="myNum01" type=number value="4" ><br>
 <input type=button value="Multiple of 3s" onclick="{
     document.getElementById('myDiv01').innerHTML = ''
     let myTemp = ''
-
     let myMax = parseInt(document.getElementById('myNum01').value)
-
     for (let myLoop = 0; myLoop < myMax; myLoop++ ){
-
        if (myLoop % 3 == 0){
           myTemp += '<font style=\'color:red;\'> Multiple of 3: </font>'
       }
-
       myTemp += myLoop + '<br>'
     }
     document.getElementById('myDiv01').innerHTML = myTemp 
@@ -109,20 +93,20 @@ Max loops: <input id="myNum01" type=number value="4" ><br>
 <h2> Find the multiples of a number</h2>
 <h5>(Up to 1000)</h5>
 Find the Multiples Of: <input id="myNum03" type=number value="0" ><br> 
-Up To What Number (Range) <input id="myNum02" type=number value="100" ><br> 
-<input type=button value="bald" onclick="{
+<input type=button value="Go" onclick="{
      document.getElementById('Div2').innerHTML = ''
      let myTemp2 = ''
     
-     let myMax2 = parseInt(document.getElementById('myNum02').value)
+     let myMax2 = 1000
      let myMax3 = parseInt(document.getElementById('myNum03').value)
-
      for (let myLoop2 = 0; myLoop2 <= myMax2; myLoop2++){
-
        if (myLoop2 % myMax3 == 0){
           myTemp2 += '<font style=\'color:red;\'>multiple of</font> ' + myMax3 + '<font style=\'color:red;\'>:  </font>'
+          myTemp2 += myLoop2 + '<br>'
+     } else {
+      myTemp2 += ''
      }
-      myTemp2 += myLoop2 + '<br>'
+
      }
      document.getElementById('Div2').innerHTML = myTemp2
 }">
