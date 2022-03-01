@@ -101,7 +101,7 @@ Find the Multiples Of: <input id="myNum03" type=number value="0" ><br>
      let myMax3 = parseInt(document.getElementById('myNum03').value)
      for (let myLoop2 = 0; myLoop2 <= myMax2; myLoop2++){
        if (myLoop2 % myMax3 == 0){
-          myTemp2 += '<font style=\'color:red;\'>multiple of</font> ' + myMax3 + '<font style=\'color:red;\'>:  </font>'
+          myTemp2 += myMax3 + 
           myTemp2 += myLoop2 + '<br>'
      } else {
       myTemp2 += ''
