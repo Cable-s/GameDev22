@@ -1,0 +1,171 @@
+<html>
+<head>
+<style>
+body {background-color: #1ecbe1}
+
+
+</style>
+</head>
+<body>
+<h1 align=center> Rock Paper Scissors Game </h1>
+<input id="RDM" type=button value="Rock" onclick="Start()">
+<input id="RDM" type=button value="Paper" onclick="Starts2()">
+<input id="RDM" type=button value="Scissors" onclick="Starts3()">
+
+<script>
+ function Start() {
+  setTimeout(myClear, 100);
+  setTimeout(myStart1, 600);
+  setTimeout(myStart2, 1200);
+  setTimeout(myStart3, 1800);
+  setTimeout(myStart4, 2400);
+  setTimeout(MyRDM, 2400);
+}
+</script>
+
+<script>
+ function Starts2() {
+  setTimeout(myClear, 100);
+  setTimeout(myStart1, 600);
+  setTimeout(myStart2, 1200);
+  setTimeout(myStart3, 1800);
+  setTimeout(myStart4, 2400);
+  setTimeout(MyRDM2, 2400);
+}
+</script>
+
+<script>
+ function Starts3() {
+  setTimeout(myClear, 100);
+  setTimeout(myStart1, 600);
+  setTimeout(myStart2, 1200);
+  setTimeout(myStart3, 1800);
+  setTimeout(myStart4, 2400);
+  setTimeout(MyRDM3, 2400);
+}
+</script>
+
+<script>
+function myClear() {
+ document.getElementById("demo").innerHTML = ""
+ document.getElementById("demo2").innerHTML = ""
+ document.getElementById("demo3").innerHTML = ""
+ document.getElementById("demo4").innerHTML = ""
+ document.getElementById("demo5").innerHTML = ""
+ document.getElementById("demo6").innerHTML = ""
+ document.getElementById("demo7").innerHTML = ""
+ document.getElementById("demo8").src = ""
+}
+</script>
+
+<script>
+function myStart1() {
+ document.getElementById("demo3").innerHTML = "Rock"
+}
+</script>
+
+<script>
+function myStart2() {
+ document.getElementById("demo4").innerHTML = "Paper"
+}
+</script>
+
+<script>
+function myStart3() {
+ document.getElementById("demo5").innerHTML = "Scissors"
+}
+</script>
+
+<script>
+function myStart4() {
+ document.getElementById("demo6").innerHTML = "Shoot"
+}
+</script>
+
+<script>	
+function MyRDM() {
+let x = Math.floor((Math.random() * 100) + 1);
+
+if ((x >= 0) && (x <= 33)) {
+ document.getElementById("demo").innerHTML = "Computer chose Rock";
+ document.getElementById("demo2").innerHTML = "You chose Rock";
+ document.getElementById("demo7").innerHTML = "Tie Game";
+ document.getElementById("demo8").src = "contempTroll.png";
+} else if ((x >= 34) && (x <= 66)) {
+ document.getElementById("demo").innerHTML = "Computer chose Paper";
+ document.getElementById("demo2").innerHTML = "You chose Rock";
+ document.getElementById("demo7").innerHTML = "You Lose";
+ document.getElementById("demo8").src = "sadTrollFace.png";
+} else {
+ document.getElementById("demo").innerHTML = "Computer chose Scissors";
+ document.getElementById("demo2").innerHTML = "You chose Rock";
+ document.getElementById("demo7").innerHTML = "You Win";
+ document.getElementById("demo8").src = "trollface.png";
+}
+
+
+}
+</script>
+
+<script>	
+function MyRDM2() {
+let x = Math.floor((Math.random() * 100) + 1);
+
+if ((x >= 0) && (x <= 33)) {
+ document.getElementById("demo").innerHTML = "Computer chose Rock";
+ document.getElementById("demo2").innerHTML = "You chose Paper"
+ document.getElementById("demo7").innerHTML = "You Win";
+ document.getElementById("demo8").src = "trollface.png";
+} else if ((x >= 34) && (x <= 66)) {
+ document.getElementById("demo").innerHTML = "Computer chose Paper";
+ document.getElementById("demo2").innerHTML = "You chose Paper"
+ document.getElementById("demo7").innerHTML = "Tie Game";
+ document.getElementById("demo8").src = "contempTroll.png";
+} else {
+ document.getElementById("demo").innerHTML = "Computer chose Scissors";
+ document.getElementById("demo2").innerHTML = "You chose Paper"
+ document.getElementById("demo7").innerHTML = "You Lose";
+ document.getElementById("demo8").src = "sadTrollFace.png";
+}
+
+
+}
+</script>
+
+<script>	
+function MyRDM3() {
+let x = Math.floor((Math.random() * 100) + 1);
+
+if ((x >= 0) && (x <= 33)) {
+ document.getElementById("demo").innerHTML = "Computer chose Rock";
+ document.getElementById("demo2").innerHTML = "You chose Scissors"
+ document.getElementById("demo7").innerHTML = "You Lose";
+ document.getElementById("demo8").src = "sadTrollFace.png";
+} else if ((x >= 34) && (x <= 66)) {
+ document.getElementById("demo").innerHTML = "Computer chose Paper";
+ document.getElementById("demo2").innerHTML = "You chose Scissors"
+ document.getElementById("demo7").innerHTML = "You Win";
+ document.getElementById("demo8").src = "trollface.png";
+} else {
+ document.getElementById("demo").innerHTML = "Computer chose Scissors";
+ document.getElementById("demo2").innerHTML = "You chose Scissors"
+ document.getElementById("demo7").innerHTML = "Tie Game";
+ document.getElementById("demo8").src = "contempTroll.png";
+}
+
+}
+</script>
+
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo2"></p>
+<p id="demo"></p>
+<p id="demo7"></p>
+<img id="demo8"></img>
+
+
+
+</body>
+</html>
