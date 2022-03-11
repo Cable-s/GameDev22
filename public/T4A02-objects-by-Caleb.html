@@ -5,7 +5,7 @@
 body {background-color: #1ecbe1}
 
 </style>
-	    <script src=
+    <script src=
 "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
     </script>
 </head>
@@ -49,11 +49,13 @@ document.getElementById('myDiv01').innerHTML += 'eyeColor: ' + myPerson.eyeColor
 
 
 <p>Please type any of the following *all lowercase* ('ambrose', 'caleb', 'josh', 'owen', 'nathen', 'david')</p>
+
 <input id="text1" type="text" value="name" onfocus="{
 	document.getElementById('text1').value = ''
 }">
 
-<button type="button" onclick="myFunction()">Login</button>
+<button id="myBtn" type="button" onclick="myFunction()">Login</button>
+
 
     <script> 
         $("#text1").keypress(function(event) {
@@ -67,10 +69,12 @@ document.getElementById('myDiv01').innerHTML += 'eyeColor: ' + myPerson.eyeColor
         });
     </script> 
 
+
 <script>
 
 function myFunction() {
 var x = document.getElementById('text1').value
+
 
 if (x == "josh") {
  MyObj()
@@ -96,7 +100,7 @@ function MyObj() {
 	'age': 16,
 	'favGame': 'GD'
 	}
-document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang Member #3<br>'
+document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang #3<br>'
 document.getElementById('myDiv02').innerHTML += 'firstname: ' + myPerson2.firstname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'lastname: ' + myPerson2.lastname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'age: ' + myPerson2.age + '<br>'
@@ -110,7 +114,7 @@ function MyObj2() {
 	'age': 16,
 	'favGame': 'Capy?'
 	}
-document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang Member #5<br>'
+document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang #5<br>'
 document.getElementById('myDiv02').innerHTML += 'firstname: ' + myPerson3.firstname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'lastname: ' + myPerson3.lastname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'age: ' + myPerson3.age + '<br>'
@@ -124,7 +128,7 @@ function MyObj3() {
 	'age': 16,
 	'favGame': 'CS'
 	}
-document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang Member #4<br>'
+document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang #4<br>'
 document.getElementById('myDiv02').innerHTML += 'firstname: ' + myPerson4.firstname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'lastname: ' + myPerson4.lastname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'age: ' + myPerson4.age + '<br>'
@@ -138,7 +142,7 @@ function MyObj4() {
 	'age': 16,
 	'favGame': 'half-life'
 	}
-document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang Member #1<br>'
+document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang #1<br>'
 document.getElementById('myDiv02').innerHTML += 'firstname: ' + myPerson5.firstname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'lastname: ' + myPerson5.lastname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'age: ' + myPerson5.age + '<br>'
@@ -152,21 +156,21 @@ function MyObj5() {
 	'age': 17,
 	'favGame': 'Dark Souls'
 	}
-document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang Member #2<br>'
+document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang #2<br>'
 document.getElementById('myDiv02').innerHTML += 'firstname: ' + myPerson6.firstname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'lastname: ' + myPerson6.lastname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'age: ' + myPerson6.age + '<br>'
 document.getElementById('myDiv02').innerHTML += 'favGame: ' + myPerson6.favGame + '<br>'
 }
 
-function myObj6() {
+function MyObj6() {
 	let myPerson7 = {
-	'firstname': 'error',
-	'lastname': 'error',
-	'age': 'error',
+	'firstname': 'Error',
+	'lastname': 'Error',
+	'age': error,
 	'favGame': 'error'
 	}
-document.getElementById('myDiv02').innerHTML = '<br>User Unknown<br>'
+document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang #NaN<br>'
 document.getElementById('myDiv02').innerHTML += 'firstname: ' + myPerson7.firstname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'lastname: ' + myPerson7.lastname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'age: ' + myPerson7.age + '<br>'
@@ -178,9 +182,9 @@ function MyObj7() {
 	'firstname': 'David',
 	'lastname': '████████',
 	'age': '16',
-	'favGame': 'Rocket League'
+	'favGame': 'Rcoket League'
 	}
-document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang Member #6<br>'
+document.getElementById('myDiv02').innerHTML = '<br>Gamer Gang #6<br>'
 document.getElementById('myDiv02').innerHTML += 'firstname: ' + myPerson8.firstname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'lastname: ' + myPerson8.lastname + '<br>'
 document.getElementById('myDiv02').innerHTML += 'age: ' + myPerson8.age + '<br>'
