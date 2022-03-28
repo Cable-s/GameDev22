@@ -1,1 +1,38 @@
-fgdasg
+<html>
+<head>
+<style>
+
+body {background-color: #1ecbe1}
+
+</style>
+</head>
+<body>
+
+<h5>Version 0.0.1
+<h2 align=center>T3A10 Events Caleb</h2>
+<a href="https://www.w3schools.com/tags/ref_eventattributes.asp">Good reference to html events</a><br>
+<h4>example Events Code</h4>
+<pre>
+&ltinput type=button value="example onClick" onClick="{
+	alert('hi')
+}"&gt
+</pre>
+
+<h4>Working Code Example</h4>
+
+<input type=text id="myText01" value="3"><br>
+<input type=button value="Example onClick" onClick="{
+	document.getElementById('myDiv01').innerHTML = document.getElementById('myText01').value
+}">
+
+<div id="myDiv01">...</div>
+
+<b id="myB01" onmouseout="{
+	document.getElementById('myB01').innerHTML = 'this is bold!'
+}"	onmouseover="{
+	document.getElementById('myB01').innerHTML = 'this is cool!'
+}">this is bold</b>
+</body>
+</html>
+
+
