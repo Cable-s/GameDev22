@@ -1,1 +1,51 @@
-ff
+<html>
+<head>
+<style>
+
+body {background-color: #1ecbe1}
+
+</style>
+</head>
+
+<body>
+<h2 align=center>T4A03 Classes Caleb</h2>
+<h5>version 0.0.1</h5>
+<a href="https://www.w3schools.com/js/js_classes.asp">Good JS Classes Reference</a><br>
+Classes are both objects that store variables (called properties) and Functions <br>
+that work on the variables (called Methods)
+
+<h4>Example Classes Code</h4>
+<pre>
+	class myAnimal {
+	   constructor(passName, passAge) {
+		   this.myName = passName;
+		   this.myAge = passAge;
+		   }
+		   myShow(){
+			   document.getElementById('myDiv01').innerHTML = 'hello ' + this.myName + '. You are ' + this.myAge + ' years old'
+			   }
+	   } //end class my animal
+		   myDog = new myAnimal('Snickers', 5)
+		   myDog.myShow()
+</pre>
+
+
+<h4>Example Working Classes Code</h4>
+<input type=button value="Example Class Set and Show Class Animal" onclick="{
+	class myAnimal {
+		constructor(passName, passAge) {
+			this.myName = passName;
+			this.myAge = passAge;
+			}
+			myShow(){
+				document.getElementById('myDiv01').innerHTML = 'Hello ' + this.myName + '. You are ' + this.myAge + ' years old!<br>'
+				}
+		} //end class myAnimal
+			myDog = new myAnimal('Snickers', 5)
+			myDog.myShow()
+				
+}">
+
+<div id="myDiv01">...</div>
+</body>
+</html>
