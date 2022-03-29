@@ -1,0 +1,83 @@
+<h1 align=center>t2a06-spy-name.html</h1>
+<textarea id="myArea01" rows=4 cols=70>Hello how are you</textarea><br> 
+
+
+<input type=button value="encrypt" onclick="{
+   let myTemp = ''
+   myString = document.getElementById('myArea01').value.toLowerCase().split('')
+   for (let myLoop=0;   myLoop < myString.length; myLoop++){
+      myTemp = myString[myLoop]
+      if (myString[myLoop] == 'e') {myTemp  = 'f'} 
+      if (myString[myLoop] == 'h') {myTemp  = 'i'} 
+      myString[myLoop] = myTemp
+   }
+   document.getElementById('myArea02').value = myString.join('')
+}"><br><br>
+
+
+<textarea id="myArea02" rows=4 cols=70></textarea><br> 
+
+<input type=button value="Decript" onclick="{
+   let myTemp = ''
+   myString = document.getElementById('myArea02').value.toLowerCase().split('')
+   for (let myLoop=0;   myLoop < myString.length; myLoop++){
+      myTemp = myString[myLoop]
+      if (myString[myLoop] == 'f') {myTemp  = 'e'} 
+      if (myString[myLoop] == 'i') {myTemp  = 'h'} 
+      myString[myLoop] = myTemp
+   }
+   document.getElementById('myArea03').value = myString.join('')
+}"><br><br>
+
+
+<textarea id="myArea03" rows=4 cols=70></textarea><br> 
+
+
+
+
+
+<h2>Cypher Wheel</h2>
+<p>A cypher wheel is a type of encryption method that shifts the alphabet over by however many the key is </p>
+<p>for example if the key is 3 than 'A' would turn into 'D' and 'Z' would be "C"</p>
+
+<textarea id="myArea13" rows=3 cols=40>Text Here</textarea><br> 
+<input type="number" value="1" id="myKey">
+<input type=button value="encrypt" onclick="{
+	let key = document.getElementById('myKey').value
+    const str = document.getElementById('myArea13').value
+    const input = '                                  11111111111111112222222222222223333333333333333444444444444444455555555555555556666666666666666777777777777777777888888888888888899999999999999990000000000000000ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
+    const output = '                                  11111111111111112222222222222223333333333333333444444444444444455555555555555556666666666666666777777777777777777888888888888888899999999999999990000000000000000ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
+
+    let myEncoded = '';
+    let myIndex ='';
+    for (let myLoop = 0; myLoop < str.length; myLoop++) {
+        const index = input.indexOf(str[myLoop]);
+        const indexShifted = parseInt(index) + parseInt(key)
+        console.log(indexShifted)
+        myEncoded += output[indexShifted]
+    }
+    document.getElementById('myArea14').innerHTML = myEncoded;
+
+}"><br><br>
+<textarea id="myArea14" rows=3 cols=40></textarea><br>
+<input type="number" value="1" id="myKey1">
+<input type=button value="decrypt" onclick="{
+	let key1 = document.getElementById('myKey1').value
+    const str = document.getElementById('myArea14').value
+    const input = '‏‏‎ ‎                                  11111111111111112222222222222223333333333333333444444444444444455555555555555556666666666666666777777777777777777888888888888888899999999999999990000000000000000ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
+    const output = '‏‏‎ ‎                                  11111111111111112222222222222223333333333333333444444444444444455555555555555556666666666666666777777777777777777888888888888888899999999999999990000000000000000ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
+    let myEncoded = '';
+    for (let myLoop = 0; myLoop < str.length; myLoop++) {
+        const index = input.indexOf(str[myLoop]);
+        const indexShifted = parseInt(index) - parseInt(key1)
+        myEncoded += output[indexShifted];
+    }
+    document.getElementById('myArea15').innerHTML = myEncoded;
+}"><br><br>
+<textarea id="myArea15" rows=3 cols=40></textarea><br>
+
+
+
+
+
+
