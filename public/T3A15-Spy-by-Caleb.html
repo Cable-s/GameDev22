@@ -43,41 +43,47 @@
 <textarea id="myArea13" rows=3 cols=40>Text Here</textarea><br> 
 <input type="number" value="1" id="myKey">
 <input type=button value="encrypt" onclick="{
-	let key = document.getElementById('myKey').value
+	let key = parseInt(document.getElementById('myKey').value)
+    if (key > 26) {
+        ReducedKey = key % 26
+    } else {
+        ReducedKey = key
+    }
     const str = document.getElementById('myArea13').value
     const input = '                                  11111111111111112222222222222223333333333333333444444444444444455555555555555556666666666666666777777777777777777888888888888888899999999999999990000000000000000ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
     const output = '                                  11111111111111112222222222222223333333333333333444444444444444455555555555555556666666666666666777777777777777777888888888888888899999999999999990000000000000000ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
-
     let myEncoded = '';
     let myIndex ='';
     for (let myLoop = 0; myLoop < str.length; myLoop++) {
         const index = input.indexOf(str[myLoop]);
-        const indexShifted = parseInt(index) + parseInt(key)
+        const indexShifted = parseInt(index) + parseInt(ReducedKey)
         console.log(indexShifted)
         myEncoded += output[indexShifted]
     }
     document.getElementById('myArea14').innerHTML = myEncoded;
-
 }"><br><br>
+
+
 <textarea id="myArea14" rows=3 cols=40></textarea><br>
 <input type="number" value="1" id="myKey1">
 <input type=button value="decrypt" onclick="{
-	let key1 = document.getElementById('myKey1').value
+    let key1 = document.getElementById('myKey1').value
+    if (key1 > 26) {
+        ReducedKey1 = key1 % 26
+    } else {
+        ReducedKey1 = key1
+    }
     const str = document.getElementById('myArea14').value
-    const input = '‏‏‎ ‎                                  11111111111111112222222222222223333333333333333444444444444444455555555555555556666666666666666777777777777777777888888888888888899999999999999990000000000000000ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
-    const output = '‏‏‎ ‎                                  11111111111111112222222222222223333333333333333444444444444444455555555555555556666666666666666777777777777777777888888888888888899999999999999990000000000000000ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
+    const input = 'zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAZYXWVUTSRQPONMLKJIHGFEDCBA00000000000000009999999999999999888888888888888877777777777777777766666666666666665555555555555555444444444444444433333333333333332222222222222221111111111111111                          ‎ ‎‏‏';
+    const output = 'zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAZYXWVUTSRQPONMLKJIHGFEDCBA00000000000000009999999999999999888888888888888877777777777777777766666666666666665555555555555555444444444444444433333333333333332222222222222221111111111111111                           ‎ ‎‏‏';
     let myEncoded = '';
     for (let myLoop = 0; myLoop < str.length; myLoop++) {
         const index = input.indexOf(str[myLoop]);
-        const indexShifted = parseInt(index) - parseInt(key1)
+        const indexShifted = parseInt(index) + parseInt(ReducedKey1)
         myEncoded += output[indexShifted];
     }
     document.getElementById('myArea15').innerHTML = myEncoded;
 }"><br><br>
 <textarea id="myArea15" rows=3 cols=40></textarea><br>
-
-
-
-
 
 
