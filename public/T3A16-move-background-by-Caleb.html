@@ -70,9 +70,9 @@ function myCheckHit(){
   document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
 }"><br><br>
 
-<img id="myImg01" style="position:relative; width:50px; height:25px; top:280px; left:0px;" src="myImage01.jpg">
+<img id="myImg01" style="position:absolute; width:50px; height:25px; top:280px; left:0px;" src="myImage01.jpg">
 
-<img id="myImg02" style="position:relative; width:50px; height:25px; top:280px; left:20px;" src="myImage02.jpg">
+<img id="myImg02" style="position:absolute; width:50px; height:25px; top:280px; left:100px;" src="myImage02.jpg">
 
 <input type=button value="Image Right Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
   document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
