@@ -1,12 +1,61 @@
 
+<html>
+<head>
+<style>
+body {background-color: #1ecbe1}
+
+
+</style>
+</head>
+<body>
+
 <script> let mySound1 = new Audio('Yeh.m4a') </script>
  
 
 
-<h1 align=center>T3A12-Sounds-and-events-name.html</h1>
+<h1 align=center>T4A12 Sounds by Caleb</h1>
 
 
 <input type=button value=sound onClick="{
     mySound1.play()
 
 }">
+
+<h2> Random CSGO round start sound </h2>
+
+<input type=button value="hello" onclick="MyRDM()">
+
+
+
+<script>let mySound2 = new Audio('Gman_choose1.ogg')</script>
+<script>let mySound3 = new Audio('Gman_choose2.ogg')</script>
+<script>let mySound4 = new Audio('Gman_noreg.ogg')</script>
+<script>let mySound5 = new Audio('Gman_nowork.ogg')</script>
+<script>let mySound6 = new Audio('Gman_wise.ogg')</script>
+
+<script>
+function MyRDM() {
+let x = Math.floor((Math.random() * 5) + 1);
+if (x == 1) {
+  mySound2.play()
+  document.getElementById('myDiv01').innerHTML = "playing Gman_choose1.ogg"
+} else if (x == 2) {
+  mySound3.play()
+  document.getElementById('myDiv01').innerHTML = "playing Gman_choose2.ogg"
+} else if (x == 3) {
+  mySound4.play()
+  document.getElementById('myDiv01').innerHTML = "playing Gman_noreg.ogg"
+} else if (x == 4) {
+  mySound5.play()
+  document.getElementById('myDiv01').innerHTML = "playing Gman_nowork.ogg"
+} else {
+  mySound6.play()
+  document.getElementById('myDiv01').innerHTML = "playing Gman_wise.ogg"
+}
+}
+</script>
+
+<p id='myDiv01'>...</p>
+
+</body>
+</html>
