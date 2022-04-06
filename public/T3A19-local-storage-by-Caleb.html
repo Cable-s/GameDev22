@@ -84,7 +84,7 @@ Weapon<select id="myWeapon" size=1>
    </select>
    </form><br>
 
-<input type="button" value="Store Text" onClick="{
+<input type="button" value="Store Character" onClick="{
    alert('Character Has been stored')
    localStorage.setItem('myStoredText2', document.getElementById('myName').value)
    localStorage.setItem('myStoredText3', document.getElementById('myGender').value)
@@ -92,7 +92,7 @@ Weapon<select id="myWeapon" size=1>
    localStorage.setItem('myStoredText5', document.getElementById('myWeapon').value)
 }">
 
-<input type="button" value="Retrieve Text" onClick="{
+<input type="button" value="Retrieve Character" onClick="{
    document.getElementById('myName').value = localStorage.getItem('myStoredText2')
    document.getElementById('myGender').value = localStorage.getItem('myStoredText3')
    document.getElementById('myClass').value = localStorage.getItem('myStoredText4')
