@@ -1,11 +1,37 @@
 
 
+<html>
+<head>
+<style>
+body {background-color: #1ecbe1}
+
+
+</style>
+</head>
+<body>
+
 <h2>t2a09-local-storage-name by Fred. Instructions:</h2>
 
 <body onload="{
    myStorage = localStorage.getItem('myStoredText')
+   myStorage2 = localStorage.getItem('myStoredText2')
+   myStorage3 = localStorage.getItem('myStoredText3')
+   myStorage4 = localStorage.getItem('myStoredText4')
+   myStorage5 = localStorage.getItem('myStoredText5')
    if(myStorage  != null){
       document.getElementById('myText1').value = myStorage 
+    }
+   if(myStorage2  != null){
+      document.getElementById('myName').value = myStorage2 
+    }
+   if(myStorage3  != null){
+      document.getElementById('myGender').value = myStorage3 
+    }
+   if(myStorage4  != null){
+      document.getElementById('myClass').value = myStorage4 
+    }
+   if(myStorage5  != null){
+      document.getElementById('myWeapon').value = myStorage5 
     }
 }">
 
@@ -24,3 +50,54 @@ Text example: <input id="myText1" type=text size=70 value="" placeholder="Write 
 <input type="button" value="Retrieve Text" onClick="{
    document.getElementById('myText1').value = localStorage.getItem('myStoredText')
 }"> 
+
+<h2> Character Creation </h2>
+
+
+
+Name<input id="myName" type=text size=70 value="" placeholder="Name"><br>
+
+Gender<select id="myGender" size=1>
+    <option value='myZero'>
+    <option value='myOne'>Male
+    <option value='myTwo'>Female
+   </select>
+   </form><br>
+
+Class<select id="myClass" size=1>
+    <option value='myCZero'>
+    <option value='myCOne'>Knight
+    <option value='myCTwo'>Barbarian
+    <option value='myCThree'>Samurai
+    <option value='myCFour'>Wizard
+    <option value='myCFive'>Healer
+   </select>
+   </form><br>
+
+Weapon<select id="myWeapon" size=1>
+    <option value='myWZero'>  
+    <option value='myWOne'>ShortSword
+    <option value='myWTwo'>Large Club
+    <option value='myWThree'>Katana
+    <option value='myWFour'>Crystal Staff
+    <option value='myWFive'>Heal Spell
+   </select>
+   </form><br>
+
+<input type="button" value="Store Text" onClick="{
+   alert('Character Has been stored')
+   localStorage.setItem('myStoredText2', document.getElementById('myName').value)
+   localStorage.setItem('myStoredText3', document.getElementById('myGender').value)
+   localStorage.setItem('myStoredText4', document.getElementById('myClass').value)
+   localStorage.setItem('myStoredText5', document.getElementById('myWeapon').value)
+}">
+
+<input type="button" value="Retrieve Text" onClick="{
+   document.getElementById('myName').value = localStorage.getItem('myStoredText2')
+   document.getElementById('myGender').value = localStorage.getItem('myStoredText3')
+   document.getElementById('myClass').value = localStorage.getItem('myStoredText4')
+   document.getElementById('myWeapon').value = localStorage.getItem('myStoredText5')
+}"> 
+
+</body>
+</html>
