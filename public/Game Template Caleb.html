@@ -1,0 +1,399 @@
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+
+
+
+<body id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="myBackground01.jpg">
+
+<script>
+
+   // global variables here
+   let myGlobalX = 0
+   let myClock
+
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+function myCheckHit(){
+   if ( myHitOther('myImg01','myImg02') ){
+       alert('you lose, you touched a gator')  
+       document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 25 + 'px' 
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther2(my1,my3){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my3).style.left)
+   right2  = left2 + parseInt(document.getElementById(my3).style.width)
+   top2    = parseInt(document.getElementById(my3).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my3).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+function myCheckHit2(){
+   if ( myHitOther2('myImg01','myImg03') ){
+       alert('you lose, you touched a gator')  
+       document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 25 + 'px' 
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther3(my1,my4){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my4).style.left)
+   right2  = left2 + parseInt(document.getElementById(my4).style.width)
+   top2    = parseInt(document.getElementById(my4).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my4).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+function myCheckHit3(){
+   if ( myHitOther3('myImg01','myImg04') ){
+       alert('you lose, you touched a gator')  
+       document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 25 + 'px' 
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther4(my1,my5){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my5).style.left)
+   right2  = left2 + parseInt(document.getElementById(my5).style.width)
+   top2    = parseInt(document.getElementById(my5).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my5).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+function myCheckHit4(){
+   if ( myHitOther4('myImg01','myImg05') ){
+       alert('you lose, you touched a gator')  
+       document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 25 + 'px' 
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther5(my1,my6){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my6).style.left)
+   right2  = left2 + parseInt(document.getElementById(my6).style.width)
+   top2    = parseInt(document.getElementById(my6).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my6).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+function myCheckHit5(){
+   if ( myHitOther5('myImg01','myImg06') ){
+       alert('you lose, you touched a gator')  
+       document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 25 + 'px' 
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther6(my1,my7){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my7).style.left)
+   right2  = left2 + parseInt(document.getElementById(my7).style.width)
+   top2    = parseInt(document.getElementById(my7).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my7).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+function myCheckHit6(){
+   if ( myHitOther6('myImg01','myImg07') ){
+       alert('you lose, you touched a gator')  
+       document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 25 + 'px' 
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther7(my1,my8){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my8).style.left)
+   right2  = left2 + parseInt(document.getElementById(my8).style.width)
+   top2    = parseInt(document.getElementById(my8).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my8).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+function myCheckHit7(){
+   if ( myHitOther7('myImg01','myImg08') ){
+       alert('you lose, you touched a gator')  
+       document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 25 + 'px' 
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther8(my1,my9){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my9).style.left)
+   right2  = left2 + parseInt(document.getElementById(my9).style.width)
+   top2    = parseInt(document.getElementById(my9).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my9).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+function myCheckHit8(){
+   if ( myHitOther8('myImg01','myImg09') ){
+       alert('you lose, you touched a gator')
+       document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 25 + 'px'   
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther9(my1,my10){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my10).style.left)
+   right2  = left2 + parseInt(document.getElementById(my10).style.width)
+   top2    = parseInt(document.getElementById(my10).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my10).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+function myCheckHit9(){
+   if ( myHitOther9('myImg01','myImg10') ){
+       alert('you lose, you touched a gator')  
+       document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 25 + 'px' 
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther10(my1,my11){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my11).style.left)
+   right2  = left2 + parseInt(document.getElementById(my11).style.width)
+   top2    = parseInt(document.getElementById(my11).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my11).style.height)
+   if ((right1  >  left2  ) &&      	   
+       (bottom1 >  top2   ) &&
+       (left1   <  right2 ) &&
+       (top1    <  bottom2)){
+       return true
+   }
+}
+function myCheckHit10(){
+   if ( myHitOther10('myImg01','myImg11') ){
+       alert('you lose, dont touch the land') 
+       document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 25 + 'px'  
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther11(my1,my12){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my12).style.left)
+   right2  = left2 + parseInt(document.getElementById(my12).style.width)
+   top2    = parseInt(document.getElementById(my12).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my12).style.height)
+   if ((right1  >  left2  ) &&      	   
+       (bottom1 >  top2   ) &&
+       (left1   <  right2 ) &&
+       (top1    <  bottom2)){
+       return true
+   }
+}
+function myCheckHit11(){
+   if ( myHitOther11('myImg01','myImg12') ){
+       alert('you lose, dont touch the land') 
+       document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 25 + 'px' 
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther12(my1,my13){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my13).style.left)
+   right2  = left2 + parseInt(document.getElementById(my13).style.width)
+   top2    = parseInt(document.getElementById(my13).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my13).style.height)
+   if ((right1  >  left2  ) &&      	   
+       (bottom1 >  top2   ) &&
+       (left1   <  right2 ) &&
+       (top1    <  bottom2)){
+       return true
+   }
+}
+function myCheckHit12(){
+   if ( myHitOther12('myImg01','myImg13') ){
+       alert('You Win, Second Level Coming Soon, Reloads on OK')  
+       document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 105 + 'px' 
+       setTimeout(myReload, 50);
+   }
+}
+function myHitOther13(my1,my14){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my14).style.left)
+   right2  = left2 + parseInt(document.getElementById(my14).style.width)
+   top2    = parseInt(document.getElementById(my14).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my14).style.height)
+   if ((right1  >  left2  ) &&      	   
+       (bottom1 >  top2   ) &&
+       (left1   <  right2 ) &&
+       (top1    <  bottom2)){
+       return true
+   }
+}
+function myCheckHit13(){
+   if ( myHitOther13('myImg01','myImg14') ){
+       alert('You lose, Dont Touch the Land')  
+  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 25 + 'px'
+       setTimeout(myReload, 50);
+   }
+}
+
+function myReload() {
+  window.location.reload();
+}
+
+</script>
+
+<input id="myButton01" type=hidden value="background move left" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX -= 5
+  myTemp =  myGlobalX + 'px 0px'
+  document.getElementById('myBody').style.backgroundPosition =myTemp
+  myCheckHit()
+  myCheckHit2()
+  myCheckHit3()
+  myCheckHit4()
+  myCheckHit5()
+  myCheckHit6()
+  myCheckHit7()
+  myCheckHit8()
+  myCheckHit9()
+  myCheckHit10()
+  myCheckHit11()
+  myCheckHit12()
+  myCheckHit13()
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) - 5 + 'px'
+  document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) - 5 + 'px'
+  document.getElementById('myImg04').style.left = parseInt(document.getElementById('myImg04').style.left) - 5 + 'px'
+  document.getElementById('myImg05').style.left = parseInt(document.getElementById('myImg05').style.left) - 5 + 'px'
+  document.getElementById('myImg06').style.left = parseInt(document.getElementById('myImg06').style.left) - 5 + 'px'
+  document.getElementById('myImg07').style.left = parseInt(document.getElementById('myImg07').style.left) - 5 + 'px'
+  document.getElementById('myImg08').style.left = parseInt(document.getElementById('myImg08').style.left) - 5 + 'px'
+  document.getElementById('myImg09').style.left = parseInt(document.getElementById('myImg09').style.left) - 5 + 'px'
+  document.getElementById('myImg10').style.left = parseInt(document.getElementById('myImg10').style.left) - 5 + 'px'
+  document.getElementById('myImg13').style.left = parseInt(document.getElementById('myImg13').style.left) - 5 + 'px'
+}">
+
+<input id="btnSt" type=button value="Start" onclick="{
+  clearInterval(myClock)
+  myClock = setInterval(function(){
+     document.getElementById('myButton01').click() 
+  }, 50)
+    
+}">
+<br><br>
+<input id="btnUp" type=button value="Move Up" onclick="{
+  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 + 'px'
+}"><br><br>
+
+
+<input id="btnDn" type=button value="Move Down" onclick="{
+  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
+}"><br><br>
+
+<input id="btnLt" type=button value="Move Left" onclick="{
+  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 10 + 'px'
+}">
+
+
+<input id="btnRt" type=button value="Move Right" onclick="{
+  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
+}"><br>
+
+<p style="color:white"> Start To Start <br> WASD/Arrows or <br> Buttons Above to move <br> Avoid the Gators to win</p>
+
+<img id="myImg01" style="position:absolute; width:60px; height:45px; top:400px; left:0px;" src="capy.png">
+
+<img id="myImg02" style="position:absolute; width:50px; height:25px; top:365px; left:300px;" src="myImage02.jpg">
+<img id="myImg03" style="position:absolute; width:50px; height:25px; top:410px; left:390px;" src="myImage02.jpg">
+<img id="myImg04" style="position:absolute; width:50px; height:25px; top:365px; left:490px;" src="myImage02.jpg">
+<img id="myImg05" style="position:absolute; width:50px; height:25px; top:505px; left:770px;" src="myImage02.jpg">
+<img id="myImg06" style="position:absolute; width:50px; height:25px; top:465px; left:925px;" src="myImage02.jpg">
+<img id="myImg07" style="position:absolute; width:50px; height:25px; top:547px; left:925px;" src="myImage02.jpg">
+<img id="myImg08" style="position:absolute; width:50px; height:25px; top:363px; left:1250px;" src="myImage02.jpg">
+<img id="myImg09" style="position:absolute; width:50px; height:25px; top:405px; left:1335px;" src="myImage02.jpg">
+<img id="myImg10" style="position:absolute; width:75px; height:40px; top:520px; left:1450px;" src="myImage02.jpg">
+<img id="myImg11" style="position:absolute; width:100%; height:300px; top:0px; left:200px;"src="myLandT.png">
+<img id="myImg12" style="position:absolute; width:100%; height:430px; top:600px; left:0px;"src="myLandB.jpg">
+<img id="myImg14" style="position:absolute; width:200px; height:20px; top:250px; left:0px;"src="myLandM.png">
+<img id="myImg13" style="position:absolute; width:40px; height:1000px; top:0px; left:1700px; " src="myImage03.png">
+</body>
+</html>
