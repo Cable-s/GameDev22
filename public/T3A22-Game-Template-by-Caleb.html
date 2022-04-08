@@ -8,7 +8,23 @@
 
 
 
-<body id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="myBackground01.jpg">
+<body id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="myBackground01.jpg" onKeyDown="{
+
+let myKey = event.key
+
+if (myKey === 'd') {
+  document.getElementById('btnRt').click()
+}
+if (myKey === 's') {
+   document.getElementById('btnDn').click()
+}
+if (myKey === 'w') {
+   document.getElementById('btnUp').click()
+}
+if (myKey === 'a') {
+   document.getElementById('btnLt').click()
+}
+}">
 
 <script>
 
@@ -350,7 +366,7 @@ function myReload() {
   document.getElementById('myImg09').style.left = parseInt(document.getElementById('myImg09').style.left) - 5 + 'px'
   document.getElementById('myImg10').style.left = parseInt(document.getElementById('myImg10').style.left) - 5 + 'px'
   document.getElementById('myImg13').style.left = parseInt(document.getElementById('myImg13').style.left) - 5 + 'px'
-  document.getElementById('myImg15').style.left = parseInt(document.getElementById('myImg15').style.left) - 10 + 'px'
+  document.getElementById('myImg15').style.left = parseInt(document.getElementById('myImg15').style.left) - 5 + 'px'
 }">
 
 <input id="btnSt" type=button value="Start" onclick="{
@@ -379,7 +395,16 @@ function myReload() {
   document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
 }"><br>
 
-<p style="color:white"> Start To Start <br> WASD/Arrows or <br> Buttons Above to move <br> Avoid the Gators to win</p>
+<script>
+addEventListener("keyup", function(event) {
+  if (event.keyCode === ) {
+   event.preventDefault();
+   document.getElementById("btnDn").click();
+  }
+});
+</script>
+
+<p style="color:white"> Start To Start <br> WASD or <br> Buttons Above to move <br> Avoid the Gators to win</p>
 
 <img id="myImg01" style="position:absolute; width:60px; height:45px; top:400px; left:0px;" src="capy.png">
 
