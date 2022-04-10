@@ -1,3 +1,10 @@
+<html>
+<head>
+<style>
+body {background-color: #1ecbe1}
+</style>
+</head>
+<body>
 <h2 align=center>T3A18 Canvas by Caleb</h2>
 You use loops and variables to make fast fancy drawings <br><br>
 
@@ -33,7 +40,6 @@ You use loops and variables to make fast fancy drawings <br><br>
    myContext.moveTo(300,100);
    myContext.quadraticCurveTo(100,220,240,110);
    myContext.stroke();
-
 }">
 
 
@@ -43,10 +49,8 @@ You use loops and variables to make fast fancy drawings <br><br>
    myGradient.addColorStop(0, 'red');
    myGradient.addColorStop(0.5, 'blue');
    myGradient.addColorStop(1, 'yellow');
-
    myContext.fillStyle = myGradient;
    myContext.fillRect(100, 300, 200, 400);
-
    // reset fillstyle
    myContext.fillStyle = 'black';
 }"><br><br>
@@ -59,6 +63,81 @@ You use loops and variables to make fast fancy drawings <br><br>
    myContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
 }"><br><br>
 
+<p>Things I added</p>
+<input type=button value="box" onclick="{
+   myContext.beginPath();
+   myContext.lineWidth = 1;
+   myContext.moveTo(300, 300);
+   myContext.lineTo(300, 400);
+   myContext.lineTo(400, 400);
+   myContext.lineTo(400, 300);
+   myContext.lineTo(300, 300)
+   myContext.stroke();
+}"><br><br>
+
+<input type=button value="Trollface" onclick="{
+   let x = document.getElementById('mySelect01').value
+   if (x == '9') {
+   myContext.strokeStyle = 'Pink'
+} else if (x == '2') {
+   myContext.strokeStyle = 'White'
+} else if (x == '3') {
+   myContext.strokeStyle = 'Red'
+} else if (x == '4') {
+   myContext.strokeStyle = 'Orange'
+} else if (x == '5') {
+   myContext.strokeStyle = 'Yellow'
+} else if (x == '6') {
+   myContext.strokeStyle = 'Green'
+} else if (x == '7') {
+   myContext.strokeStyle = 'Blue'
+} else if (x == '8') {
+   myContext.strokeStyle = 'Purple'
+} else {
+   myContext.strokeStyle = 'Black'
+}
+   myContext.beginPath();
+   myContext.lineWidth = 3;
+   myContext.moveTo(500, 300);
+   myContext.quadraticCurveTo(590,295,600,320);
+   myContext.quadraticCurveTo(620,335,600,350);
+   myContext.lineTo(600, 375);
+   myContext.quadraticCurveTo(610,410,545,385);
+   myContext.quadraticCurveTo(485,360,480,340);
+   myContext.quadraticCurveTo(485,340,480,340);
+   myContext.quadraticCurveTo(470,330,480,320);
+   myContext.quadraticCurveTo(490,300,500,300);
+   myContext.moveTo(500,340)
+   myContext.quadraticCurveTo(540,375,540,370);
+   myContext.moveTo(540,371)
+   myContext.quadraticCurveTo(575,380,580,371);
+   myContext.quadraticCurveTo(585,355,580,340);
+   myContext.quadraticCurveTo(585,355,500,340);
+   myContext.moveTo(500,325);
+   myContext.quadraticCurveTo(515,310,530,325);
+   myContext.quadraticCurveTo(515,320,500,325);
+   myContext.moveTo(550,325);
+   myContext.quadraticCurveTo(565,310,580,325);
+   myContext.quadraticCurveTo(565,320,550,325);
+   myContext.stroke();
+}">
+
+   <select id="mySelect01" size=1>
+    <option value='0'>Select Color of Trollface
+    <option value='1'>Black
+    <option value='2'>White
+    <option value='3'>Red
+    <option value='4'>Orange
+    <option value='5'>Yellow
+    <option value='6'>Green
+    <option value='7'>Blue
+    <option value='8'>Purple
+    <option value='9'>Pink
+   </select>
+   </form>
+
+
+<br><br>
 <canvas id="myCoolTag" width="1000" height="600" style="border:1px solid #000000;"></canvas>
 
 <script>
@@ -66,3 +145,5 @@ You use loops and variables to make fast fancy drawings <br><br>
    let myCanvas=document.getElementById('myCoolTag');
    let myContext=myCanvas.getContext('2d');
 </script>
+</body>
+</html>
