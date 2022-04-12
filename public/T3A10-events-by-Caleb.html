@@ -32,7 +32,49 @@ body {background-color: #1ecbe1}
 }"	onmouseover="{
 	document.getElementById('myB01').innerHTML = 'this is cool!'
 }">this is bold</b>
+
+<br><br>
+onwheel Scroll Up/Down over the number<br>
+
+<input type=number id="scroll" value="0" 
+onwheel="{
+let x = parseInt(document.getElementById('scroll').value);
+let y = parseInt(x + 1);
+document.getElementById('scroll').value = y
+}" >
+<br><br>
+
+onselect:
+<input type="text" value="highlight this text" onselect="{
+document.getElementById('demo').innerHTML = 'You Highlighted this text'
+}">
+
+<div id="demo"></div><br><br>
+
+
+Single Click the Button for Sad Honda<br>
+Double Click the Button for Happy Honda<br>
+<input type="button" ondblclick="{
+goodHonda()
+}"
+onclick="{
+evilHonda()
+}">
+
+<script>
+function goodHonda() {
+document.getElementById('div').src = "goodHonda.png"
+}
+
+function evilHonda() {
+document.getElementById('div').src = "evilHonda.png"
+}
+</script><br>
+
+<img id="div" src="myImage03.png" width="200px" height="100px"></img>
+
 </body>
 </html>
+
 
 
