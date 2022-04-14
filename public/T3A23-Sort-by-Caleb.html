@@ -11,7 +11,7 @@ body {background-color: #1ecbe1}
 <input type=number value="15" id="rangeMax" style="width: 58px;">
 
 <script>
-   let myMax = parseFloat(document.getElementById('rangeMax').value)
+
    let myCards = new Array(myMax)  
 </script>
 
@@ -22,6 +22,7 @@ document.getElementById('divo2w').innerHTML = myMax
 <div id="divo2w"></div>
 
 <input type=button value="Set Random" onclick="{
+  var myMax = parseFloat(document.getElementById('rangeMax').value)
   for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
      myCards[myLoop] = Math.floor(Math.random()*myMax)
   }
@@ -30,6 +31,7 @@ document.getElementById('divo2w').innerHTML = myMax
 
 
 <input id="show" type=hidden value="Show" onclick="{
+  var myMax = parseFloat(document.getElementById('rangeMax').value)
   let myTemp = ''
   for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
      myTemp +=  myCards[myLoop] + '<br>'
@@ -38,6 +40,7 @@ document.getElementById('divo2w').innerHTML = myMax
 }">
 
 <input type=button value="Sort" onclick="{
+  var myMax = parseFloat(document.getElementById('rangeMax').value)
   for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
     let myTemp = 0
     for (let myLoop = 0; myLoop < myMax; myLoop++){
