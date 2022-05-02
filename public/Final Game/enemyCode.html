@@ -5,47 +5,76 @@
 </style>
 </head>
 <body>
-<body onload="myLoad()" id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="black.png" onKeyPress="{
-//moving characters
-let myKey = event.key
+<body onload="myLoad()" id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="black.png" onKeyPress="moving(event)">
+
+
+<script>
+function moving(event) {
+var dir = 0
+var myKey = event.key;
 if (myKey === 'd') {
-  document.getElementById('btnRt').click()
+   moveR();
 }
 if (myKey === 's') {
-   document.getElementById('btnDn').click()
+   moveD();
 }
 if (myKey === 'w') {
-   document.getElementById('btnUp').click()
+   moveU();
 }
 if (myKey === 'a') {
-   document.getElementById('btnLt').click()
+   moveL();
 }
-if (myKey === 37) {
-   document.getElementById('btnRt').click()
+if (myKey === 'f') {
+   att();
 }
-if (myKey === 40) {
-   document.getElementById('btnDn').click()
-}
-if (myKey === 38) {
-   document.getElementById('btnUp').click()
-}
-if (myKey === 39) {
-   document.getElementById('btnLt').click()
-}
-}">
 
-<input id="btnUp" type=hidden value="Move Up" onclick="{
-  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
-}">
-<input id="btnDn" type=hidden value="Move Down" onclick="{
-  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 15 + 'px'
-}">
-<input id="btnLt" type=hidden value="Move Left" onclick="{
-  document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 15 + 'px'
-}">
-<input id="btnRt" type=hidden value="Move Right" onclick="{
-  document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 15 + 'px'
-}">
+}
+
+function moveU(){
+  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px';
+  var dir = 1;
+}
+function moveD() {
+  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 15 + 'px';
+  var dir = 2;
+}
+function moveL() {
+  document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 15 + 'px';
+  var dir = 3;
+}
+function moveR() {
+  document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 15 + 'px';
+  var dir = 4;
+}
+
+function att() {
+if (dir == 4) {
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) + 55 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
+  setTimeout(attM, 500)
+}
+if (dir == 3) {
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) - 55 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
+  setTimeout(attM, 500)
+}
+if (dir == 2) {
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) + 55 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
+  setTimeout(attM, 500)
+}
+if (dir == 1){
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) + 55 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
+  setTimeout(attM, 500)
+}
+
+}
+
+function attM() {
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('attackT').style.left) - 1000 + 'px'
+}
+</script>
 
 <script>
    // global variables here
@@ -86,16 +115,16 @@ function myCheckHit(){
          document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 10 + 'px'
  }
    if ( myHitOther('player','PwallT') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 10 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
  }
    if ( myHitOther('player','PwallB') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 10 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
  }
    if ( myHitOther('player','PwallL') ){  
-         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 10 + 'px' 
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 20 + 'px' 
  }
    if ( myHitOther('player','PwallR') ){  
-         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 10 + 'px'
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
  }
    if ( myHitOther('player','myImg01') ){  
          alert('You Died');
@@ -103,52 +132,52 @@ function myCheckHit(){
          location = ''    
  }
    if ( myHitOther('player','pillarL1') ){  
-         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 10 + 'px'
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
  }
    if ( myHitOther('player','pillarL2') ){  
-         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 10 + 'px'  
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'  
  }
    if ( myHitOther('player','pillarL3') ){  
-         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 10 + 'px'
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
  }
    if ( myHitOther('player','pillarL4') ){  
-         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 10 + 'px'
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
  }
    if ( myHitOther('player','pillarR1') ){  
-         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 10 + 'px'
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 20 + 'px'
  }
    if ( myHitOther('player','pillarR2') ){  
-         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 10 + 'px'
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 20 + 'px'
  }
    if ( myHitOther('player','pillarR3') ){  
-         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 10 + 'px'
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 20 + 'px'
  }
    if ( myHitOther('player','pillarR4') ){  
-         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 10 + 'px'
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 20 + 'px'
  }
    if ( myHitOther('player','pillarT1') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 10 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
  }
    if ( myHitOther('player','pillarT2') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 10 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
  }
    if ( myHitOther('player','pillarT3') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 10 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
  }
    if ( myHitOther('player','pillarT4') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 10 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
  }
    if ( myHitOther('player','pillarB1') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 10 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
  }
    if ( myHitOther('player','pillarB2') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 10 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
  }
    if ( myHitOther('player','pillarB3') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 10 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
  }
    if ( myHitOther('player','pillarB4') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 10 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
  }
    if ( myHitOther('player','door') ){  
          randomRoom()
@@ -170,7 +199,7 @@ function myCheckHit(){
 //Put Hitboxes here
 //Put other things every frame here (enemies moving, traps, etc)
    myCheckHit();
-   badMove();
+   timer1();
 }">
 
 <input id="btnSt" type=hidden value="Start" onclick="{
@@ -181,6 +210,17 @@ function myCheckHit(){
     
 }">
 
+<script>
+function timer1() {
+let t = Math.floor((Math.random() * 100) + 1);
+if (t <= 20) {
+   badMove()
+} else {
+   ev()
+}
+
+}
+</script>
 
 <script>
 function myLoad() {
@@ -191,7 +231,7 @@ function myLoad() {
 
 <script>
 function badMove() {
-let h = Math.floor((Math.random() * 5) + 1);
+let h = Math.floor((Math.random() * 6) + 1);
 if (h == 1) {
   document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 5 + 'px'
 }else if (h == 2){
@@ -208,6 +248,7 @@ if (h == 1) {
 </script>
 <script>
 function randomRoom() {
+document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 1000 + 'px';
 let r = Math.floor((Math.random() * 100) + 1);
 if ((r >= 1) && (r <= 60))  { 
     window.location = "https://www.javatpoint.com/";      //60%
@@ -222,7 +263,7 @@ if ((r >= 1) && (r <= 60))  {
     window.location = "https://www.javatpoint.com/";      //21%
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
 } else if (r == 100) {
-    window.location = "https://www.javatpoint.com/";      //1%
+    window.location = "google.com";      //1%
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
 }
 }
@@ -234,7 +275,7 @@ if ((r >= 1) && (r <= 60))  {
 <img id="pillarT3" style="position:absolute; width:64px; height:29px; top:180px; left:370px; z-index:1" src="black.png">
 <img id="pillarT4" style="position:absolute; width:64px; height:29px; top:475px; left:370px; z-index:1" src="black.png">
 <img id="player" style="position:absolute; width:50px; height:50px; top:400px; left:50px; z-index:0" src="evilHonda.png">
-<img id="myImg01" style="position:absolute; width:50px; height:50px; top:200px; left:500px;" src="evilHonda.png">
+<img id="myImg01" style="position:absolute; width:50px; height:50px; top:200px; left:610px;" src="evilHonda.png">
 <img id="baddie" style="position:absolute; width:1248px; height:120px; top:300px; left:0px;" src="Invisible.png">
 <img id="PwallB" style="position:absolute; width:1248px; height:120px; top:0px; left:0px;" src="Invisible.png">
 <img id="PwallT" style="position:absolute; width:1248px; height:100px; top:700px; left:0px;" src="Invisible.png">
@@ -260,7 +301,8 @@ if ((r >= 1) && (r <= 60))  {
 <img id="pillarR2" style="position:absolute; width:1px; height:65px; top:510px; left:989px;" src="Invisible.png">
 <img id="pillarR3" style="position:absolute; width:1px; height:65px; top:215px; left:434px;" src="Invisible.png">
 <img id="pillarR4" style="position:absolute; width:1px; height:65px; top:510px; left:434px;" src="Invisible.png">
-<img id="door" style="position:absolute; width:100px; height:100px; top:30px; left:610px;" src="door.png">
+<img id="door" style="position:absolute; width:70px; height:100px; top:30px; left:625px;" src="door.png">
+<img id="attackT" style="position:absolute; width:25px; height:75px; top:390px; left:100px;" src="">
 <img id="room" src="Room1.png">
 </body>
 </html>
