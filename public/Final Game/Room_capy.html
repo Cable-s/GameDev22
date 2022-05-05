@@ -1,0 +1,225 @@
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+<body onload="myLoad()" id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="black.png" onKeyPress="moving(event)">
+
+
+<script>
+function moving(event) {
+var dir = 0
+var myKey = event.key;
+
+if (myKey === 'd') {
+   moveR();
+}
+if (myKey === 's') {
+   moveD();
+}
+if (myKey === 'w') {
+   moveU();
+}
+if (myKey === 'a') {
+   moveL();
+}
+if (myKey === 'f') {
+   att();
+}
+
+}
+
+function moveU(){
+  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px';
+  dir = 1;
+}
+function moveD() {
+  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 15 + 'px';
+  dir = 2;
+}
+function moveL() {
+  document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 15 + 'px';
+  dir = 3;
+}
+function moveR() {
+  document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 15 + 'px';
+  dir = 4;
+}
+
+function att() {
+if (dir == 4) {
+  document.getElementById('attackT').style.width = 25 + "px"
+  document.getElementById('attackT').style.height = 75 + "px"
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) + 55 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
+  setTimeout(attM, 400)
+}
+if (dir == 3) {
+  document.getElementById('attackT').style.width = 25 + "px"
+  document.getElementById('attackT').style.height = 75 + "px"
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) - 30 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
+  setTimeout(attM, 400)
+}
+if (dir == 2){
+  document.getElementById('attackT').style.width = 75 + "px"
+  document.getElementById('attackT').style.height = 25 + "px"
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) - 13 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) + 55 + 'px'
+  setTimeout(attM, 400)
+}
+if (dir == 1){
+  document.getElementById('attackT').style.width = 75 + "px"
+  document.getElementById('attackT').style.height = 25 + "px"
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) - 13 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 30 + 'px'
+  setTimeout(attM, 400)
+}
+
+}
+
+function attM() {
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('attackT').style.left) - 1000 + 'px'
+}
+</script>
+
+<script>
+   // global variables here
+   let myGlobalX = 0
+   let myClock
+
+//hitboxes
+
+//enemey with walls
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+
+function myCheckHit(){
+   
+   if ( myHitOther('player','PwallT') ){  
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
+ }
+   if ( myHitOther('player','PwallB') ){  
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
+ }
+   if ( myHitOther('player','PwallL') ){  
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 20 + 'px' 
+ }
+   if ( myHitOther('player','PwallR') ){  
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
+ }
+   if ( myHitOther('player','door') ){  
+         randomRoom()
+ }
+  if ( myHitOther('player','CwallB') ){  
+          document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
+ }
+  if ( myHitOther('player','CwallT') ){  
+          document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
+ }
+  if ( myHitOther('player','CwallL') ){  
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px' 
+ }
+  if ( myHitOther('player','CwallR') ){  
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 20 + 'px'
+ }
+  if ( myHitOther('player','bless') ){  
+         blessing()
+ }
+}
+
+
+blesscount = 0;
+function blessing() {
+  blesscount = blesscount + 1;
+  if (blesscount == 1) {
+    alert('you kneel in front of the golden Capy, You feel blessed.')
+  }
+}
+
+function randomRoom() {
+  setTimeout(bruh, 1000)
+}
+
+function bruh() {
+let r = Math.floor((Math.random() * 100) + 1);
+if ((r >= 1) && (r <= 60))  { 
+  parseInt(document.getElementById('player').style.top) + 1000 + 'px'
+  window.location = "https://www.javatpoint.com/";      //60%
+} else if ((r >= 61) && (r <= 65)) {
+  parseInt(document.getElementById('player').style.top) + 1000 + 'px'
+  window.location = "https://www.javatpoint.com/";      //5%
+} else if ((r >= 66) && (r <= 78)) {
+  parseInt(document.getElementById('player').style.top) + 1000 + 'px'
+  window.location = "https://www.javatpoint.com/";      //13%
+} else if ((r >= 79) && (r <= 99)) {
+  parseInt(document.getElementById('player').style.top) + 1000 + 'px'
+  window.location = "https://www.javatpoint.com/";      //21%
+} else if (r == 100) {
+  parseInt(document.getElementById('player').style.top) + 1000 + 'px'
+    window.location = "google.com";      //1%
+}
+}
+</script>
+
+
+
+<input id="myButton01" type=hidden value="background move left" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX -= 5
+  myTemp =  myGlobalX + 'px 0px'
+  document.getElementById('myBody').style.backgroundPosition =myTemp
+//Put Hitboxes here
+//Put other things every frame here (enemies moving, traps, etc)
+   myCheckHit();
+   timer1();
+}">
+
+<input id="btnSt" type=hidden value="Start" onclick="{
+  clearInterval(myClock)
+  myClock = setInterval(function(){
+     document.getElementById('myButton01').click() 
+  }, 17)
+    
+}">
+
+<script>
+function myLoad() {
+ document.getElementById('btnSt').click();
+ document.getElementById('btnSt2').click();
+}
+</script>
+
+<!-- objects -->
+<img id="player" style="position:absolute; width:50px; height:50px; top:525px; left:600px; z-index:0" src="evilHonda.png">
+<img id="capy" style="position:absolute; width:338px; height:148px; top:20px; left:450px;" src="Capy_shrine.png">
+<img id="PwallB" style="position:absolute; width:1248px; height:20px; top:0px; left:0px;" src="Invisible.png">
+<img id="PwallT" style="position:absolute; width:1248px; height:50px; top:700px; left:0px;" src="Invisible.png">
+<img id="PwallL" style="position:absolute; width:40px; height:700px; top:0px; left:-20px;" src="Invisible.png">
+<img id="PwallR" style="position:absolute; width:40px; height:700px; top:0px; left:1280px;" src="Invisible.png">
+<img id="CwallB" style="position:absolute; width:320px; height:20px; top:240px; left:460px;" src="Invisible.png">
+<img id="CwallT" style="position:absolute; width:320px; height:20px; top:160px; left:460px;" src="Invisible.png">
+<img id="CwallL" style="position:absolute; width:20px; height:100px; top:160px; left:440px;" src="Invisible.png">
+<img id="CwallR" style="position:absolute; width:20px; height:100px; top:160px; left:780px;" src="Invisible.png">
+<img id="bless" style="position:absolute; width:200px; height:50px; top:260px; left:520px;" src="Invisible.png">
+<img id="door" style="position:absolute; width:70px; height:100px; top:620px; left:600px;" src="dhoor.png">
+<img id="attackT" style="position:absolute; width:25px; height:75px; top:390px; left:-1000px;" src="">
+<img id="room" src="Room-capy.png" style="width:1280px; height:720px">
+</body>
+</html>
