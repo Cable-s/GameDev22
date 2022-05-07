@@ -50,24 +50,24 @@ function moveR() {
 
 function att() {
 if (dir == 4) {
-  document.getElementById('attackT').style.width = 25 + "px"
-  document.getElementById('attackT').style.height = 75 + "px"
-  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) + 55 + 'px'
-  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
+  document.getElementById('attackR').style.width = 25 + "px"
+  document.getElementById('attackR').style.height = 75 + "px"
+  document.getElementById('attackR').style.left = parseInt(document.getElementById('player').style.left) + 55 + 'px'
+  document.getElementById('attackR').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
   setTimeout(attM, 400)
 }
 if (dir == 3) {
-  document.getElementById('attackT').style.width = 25 + "px"
-  document.getElementById('attackT').style.height = 75 + "px"
-  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) - 30 + 'px'
-  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
+  document.getElementById('attackL').style.width = 25 + "px"
+  document.getElementById('attackL').style.height = 75 + "px"
+  document.getElementById('attackL').style.left = parseInt(document.getElementById('player').style.left) - 30 + 'px'
+  document.getElementById('attackL').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
   setTimeout(attM, 400)
 }
 if (dir == 2){
-  document.getElementById('attackT').style.width = 75 + "px"
-  document.getElementById('attackT').style.height = 25 + "px"
-  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) - 13 + 'px'
-  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) + 55 + 'px'
+  document.getElementById('attackD').style.width = 75 + "px"
+  document.getElementById('attackD').style.height = 25 + "px"
+  document.getElementById('attackD').style.left = parseInt(document.getElementById('player').style.left) - 13 + 'px'
+  document.getElementById('attackD').style.top = parseInt(document.getElementById('player').style.top) + 55 + 'px'
   setTimeout(attM, 400)
 }
 if (dir == 1){
@@ -82,6 +82,9 @@ if (dir == 1){
 
 function attM() {
   document.getElementById('attackT').style.left = parseInt(document.getElementById('attackT').style.left) - 1000 + 'px'
+  document.getElementById('attackD').style.left = parseInt(document.getElementById('attackD').style.left) - 1000 + 'px'
+  document.getElementById('attackL').style.left = parseInt(document.getElementById('attackL').style.left) - 1000 + 'px'
+  document.getElementById('attackR').style.left = parseInt(document.getElementById('attackR').style.left) - 1000 + 'px'
 }
 </script>
 
@@ -159,21 +162,15 @@ function randomRoom() {
 
 function bruh() {
 let r = Math.floor((Math.random() * 100) + 1);
-if ((r >= 1) && (r <= 60))  { 
+if ((r >= 1) && (r <= 33))  { 
   parseInt(document.getElementById('player').style.top) + 1000 + 'px'
-  window.location = "https://www.javatpoint.com/";      //60%
-} else if ((r >= 61) && (r <= 65)) {
+  window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room1.html";
+} else if ((r >= 34) && (r <= 66)) {
   parseInt(document.getElementById('player').style.top) + 1000 + 'px'
-  window.location = "https://www.javatpoint.com/";      //5%
-} else if ((r >= 66) && (r <= 78)) {
+  window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room2.html";
+} else if ((r >= 67) && (r <= 100)) {
   parseInt(document.getElementById('player').style.top) + 1000 + 'px'
-  window.location = "https://www.javatpoint.com/";      //13%
-} else if ((r >= 79) && (r <= 99)) {
-  parseInt(document.getElementById('player').style.top) + 1000 + 'px'
-  window.location = "https://www.javatpoint.com/";      //21%
-} else if (r == 100) {
-  parseInt(document.getElementById('player').style.top) + 1000 + 'px'
-    window.location = "google.com";      //1%
+  window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room3.html";
 }
 }
 </script>
@@ -218,8 +215,11 @@ function myLoad() {
 <img id="CwallL" style="position:absolute; width:20px; height:100px; top:160px; left:440px;" src="Invisible.png">
 <img id="CwallR" style="position:absolute; width:20px; height:100px; top:160px; left:780px;" src="Invisible.png">
 <img id="bless" style="position:absolute; width:200px; height:50px; top:260px; left:520px;" src="Invisible.png">
-<img id="door" style="position:absolute; width:70px; height:100px; top:620px; left:600px;" src="dhoor.png">
-<img id="attackT" style="position:absolute; width:25px; height:75px; top:390px; left:-1000px;" src="">
+<img id="door" style="position:absolute; width:70px; height:100px; top:620px; left:600px;" src="door.png">
+<img id="attackT" style="position:absolute; width:25px; height:75px; top:390px; left:-100px;" src="attackT.png">
+<img id="attackD" style="position:absolute; width:25px; height:75px; top:390px; left:-100px;" src="attackD.png">
+<img id="attackL" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackL.png">
+<img id="attackR" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackR.png">
 <img id="room" src="Room-capy.png" style="width:1280px; height:720px">
 </body>
 </html>

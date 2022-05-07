@@ -49,7 +49,7 @@ function moveR() {
 }
 
 function att() {
-if (dir == 4) {
+  if (dir == 4) {
   document.getElementById('attackR').style.width = 25 + "px"
   document.getElementById('attackR').style.height = 75 + "px"
   document.getElementById('attackR').style.left = parseInt(document.getElementById('player').style.left) + 55 + 'px'
@@ -84,8 +84,7 @@ function attM() {
   document.getElementById('attackT').style.left = parseInt(document.getElementById('attackT').style.left) - 1000 + 'px'
   document.getElementById('attackD').style.left = parseInt(document.getElementById('attackD').style.left) - 1000 + 'px'
   document.getElementById('attackL').style.left = parseInt(document.getElementById('attackL').style.left) - 1000 + 'px'
-  document.getElementById('attackR').style.left = parseInt(document.getElementById('attackR').style.left) - 1000 + 'px'
-}
+  document.getElementById('attackR').style.left = parseInt(document.getElementById('attackR').style.left) - 1000 + 'px'}
 </script>
 
 <script>
@@ -180,18 +179,19 @@ function myCheckHit(){
          document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
  }
    if ( myHitOther('player','pillarB1') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
  }
    if ( myHitOther('player','pillarB2') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
  }
-   if ( myHitOther('player','pillarB3') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
- }
+
    if ( myHitOther('player','pillarB4') ){  
          document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
  }
    if ( myHitOther('player','door') ){  
+         randomRoom()
+ }
+ if ( myHitOther('player','door2') ){  
          randomRoom()
  }
    if ( myHitOther('myImg01','baddie') ){  
@@ -200,6 +200,21 @@ function myCheckHit(){
    if ( myHitOther('myImg01','attackT') ){  
          ouch();
  }
+ if ( myHitOther('myImg02','attackT') ){  
+         ouch3();
+ }
+ if (myHitOther('myImg02','PwallL') ){
+    document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) - 10 + 'px'
+ }
+ if (myHitOther('myImg02','PwallB') ){
+    document.getElementById('myImg02').style.top = parseInt(document.getElementById('myImg02').style.top) + 10 + 'px'
+ }
+ if (myHitOther('myImg02','pillarB1') ){
+    document.getElementById('myImg02').style.top = parseInt(document.getElementById('myImg02').style.top) - 10 + 'px'
+ }
+ if (myHitOther('myImg02','pillarB3') ){
+    document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) - 10 + 'px'
+ }
  if ( myHitOther('myImg01','attackD') ){  
          ouch();
  }
@@ -207,6 +222,15 @@ function myCheckHit(){
          ouch();
  }
  if ( myHitOther('myImg01','attackR') ){  
+         ouch();
+ }
+ if ( myHitOther('myImg02','attackD') ){  
+         ouch();
+ }
+ if ( myHitOther('myImg02','attackL') ){  
+         ouch();
+ }
+ if ( myHitOther('myImg02','attackR') ){  
          ouch();
  }
 }
@@ -223,6 +247,20 @@ function ouch() {
 
 function ouch2() {
    health = health - 1;
+}
+
+var health2 = 3;
+function ouch3() {
+   setTimeout(ouch4, 2000)
+    if (health2 <= 0) {
+    document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) - 1000 + 'px' 
+   } else {
+    
+  }  
+}
+
+function ouch4() {
+   health2 = health2 - 1;
 }
 </script>
 
@@ -280,6 +318,18 @@ if (h == 1) {
 }else{
   document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left)
 }
+let t = Math.floor((Math.random() * 6) + 1);
+if (t == 1) {
+  document.getElementById('myImg02').style.top = parseInt(document.getElementById('myImg02').style.top) - 5 + 'px'
+}else if (t == 2){
+  document.getElementById('myImg02').style.top = parseInt(document.getElementById('myImg02').style.top) + 5 + 'px'
+}else if (t == 3){
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) - 5 + 'px'
+}else if (t == 4){
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 5 + 'px'
+}else{
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left)
+}
 }
 
 </script>
@@ -287,56 +337,60 @@ if (h == 1) {
 function randomRoom() {
 document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 1000 + 'px';
 let r = Math.floor((Math.random() * 100) + 1);
-if ((r >= 1) && (r <= 50))  { 
-    window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room3.html";      
+if ((r >= 1) && (r <= 60))  { 
+    window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room2.html";      //60%
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
-} else if ((r >= 51) && (r <= 99)) {
-    window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room2.html";     
+} else if ((r >= 61) && (r <= 65)) {
+    window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room2.html";      //5%
+    parseInt(document.getElementById('player').style.top) + 1000 + 'px'
+} else if ((r >= 66) && (r <= 78)) {
+    window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room2.html";      //13%
+    parseInt(document.getElementById('player').style.top) + 1000 + 'px'
+} else if ((r >= 79) && (r <= 99)) {
+    window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room2.html";      //21%
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
 } else if (r == 100) {
-    window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room_capy.html";    
+    window.location = "file:///D:/Desktop/gmaedev/Final%20Game/Room2.html";      //1%
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
 }
 }
 </script>
 
 <!-- objects -->
-<img id="pillarT1" style="position:absolute; width:64px; height:29px; top:180px; left:925px; z-index:1" src="black.png">
-<img id="pillarT2" style="position:absolute; width:64px; height:29px; top:475px; left:925px; z-index:1" src="black.png">
-<img id="pillarT3" style="position:absolute; width:64px; height:29px; top:180px; left:370px; z-index:1" src="black.png">
-<img id="pillarT4" style="position:absolute; width:64px; height:29px; top:475px; left:370px; z-index:1" src="black.png">
-<img id="player" style="position:absolute; width:50px; height:50px; top:400px; left:50px; z-index:0" src="evilHonda.png">
+<img id="player" style="position:absolute; width:50px; height:50px; top:575px; left:550px; z-index:0" src="evilHonda.png">
 <img id="myImg01" style="position:absolute; width:50px; height:50px; top:200px; left:610px;" src="evilHonda.png">
+<img id="myImg02" style="position:absolute; width:50px; height:50px; top:300px; left:910px;" src="evilHonda.png">
 <img id="baddie" style="position:absolute; width:1248px; height:120px; top:300px; left:0px;" src="Invisible.png">
 <img id="PwallB" style="position:absolute; width:1248px; height:120px; top:0px; left:0px;" src="Invisible.png">
 <img id="PwallT" style="position:absolute; width:1248px; height:100px; top:700px; left:0px;" src="Invisible.png">
-<img id="PwallL" style="position:absolute; width:40px; height:700px; top:0px; left:0px;" src="Invisible.png">
+<img id="PwallL" style="position:absolute; width:40px; height:700px; top:0px; left:375px;" src="Invisible.png">
 <img id="PwallR" style="position:absolute; width:100px; height:700px; top:0px; left:1248px;" src="Invisible.png">
 <img id="wallB" style="position:absolute; width:1248px; height:120px; top:0px; left:0px;" src="Invisible.png">
 <img id="wallT" style="position:absolute; width:1248px; height:100px; top:700px; left:0px;" src="Invisible.png">
 <img id="wallL" style="position:absolute; width:40px; height:700px; top:0px; left:395px;" src="Invisible.png">
 <img id="wallR" style="position:absolute; width:40px; height:700px; top:0px; left:925px;" src="Invisible.png">
-<img id="pillarB1" style="position:absolute; width:65px; height:20px; top:275px; left:925px;" src="Invisible.png">
-<img id="pillarB2" style="position:absolute; width:65px; height:20px; top:572px; left:925px;" src="Invisible.png">
-<img id="pillarB3" style="position:absolute; width:65px; height:20px; top:275px; left:370px;" src="Invisible.png">
-<img id="pillarB4" style="position:absolute; width:65px; height:20px; top:567px; left:370px;" src="Invisible.png">
-<img id="pillarT1" style="position:absolute; width:65px; height:20px; top:210px; left:925px;" src="Invisible.png">
-<img id="pillarT2" style="position:absolute; width:65px; height:20px; top:505px; left:925px;" src="Invisible.png">
-<img id="pillarT3" style="position:absolute; width:65px; height:20px; top:210px; left:370px;" src="Invisible.png">
-<img id="pillarT4" style="position:absolute; width:65px; height:20px; top:505px; left:370px;" src="Invisible.png">
-<img id="pillarL1" style="position:absolute; width:1px; height:65px; top:215px; left:925px;" src="Invisible.png">
-<img id="pillarL2" style="position:absolute; width:1px; height:65px; top:510px; left:925px;" src="Invisible.png">
-<img id="pillarL3" style="position:absolute; width:1px; height:65px; top:215px; left:370px;" src="Invisible.png">
-<img id="pillarL4" style="position:absolute; width:1px; height:65px; top:510px; left:370px;" src="Invisible.png">
-<img id="pillarR1" style="position:absolute; width:1px; height:65px; top:215px; left:989px;" src="Invisible.png">
-<img id="pillarR2" style="position:absolute; width:1px; height:65px; top:510px; left:989px;" src="Invisible.png">
-<img id="pillarR3" style="position:absolute; width:1px; height:65px; top:215px; left:434px;" src="Invisible.png">
-<img id="pillarR4" style="position:absolute; width:1px; height:65px; top:510px; left:434px;" src="Invisible.png">
-<img id="door" style="position:absolute; width:70px; height:100px; top:30px; left:625px;" src="door.png">
+<img id="pillarB1" style="position:absolute; width:1248px; height:20px; top:400px; left:750px;" src="Invisible.png">
+<img id="pillarB2" style="position:absolute; width:20px; height:500px; top:400px; left:750px;" src="Invisible.png">
+<img id="pillarB3" style="position:absolute; width:20px; height:600px; top:0px; left:750px;" src="Invisible.png">
+<img id="pillarB4" style="position:absolute; width:65px; height:20px; top:567px; left:-370px;" src="Invisible.png">
+<img id="pillarT1" style="position:absolute; width:65px; height:20px; top:210px; left:-925px;" src="Invisible.png">
+<img id="pillarT2" style="position:absolute; width:65px; height:20px; top:505px; left:-925px;" src="Invisible.png">
+<img id="pillarT3" style="position:absolute; width:65px; height:20px; top:210px; left:-370px;" src="Invisible.png">
+<img id="pillarT4" style="position:absolute; width:65px; height:20px; top:505px; left:-370px;" src="Invisible.png">
+<img id="pillarL1" style="position:absolute; width:1px; height:65px; top:215px; left:-925px;" src="Invisible.png">
+<img id="pillarL2" style="position:absolute; width:1px; height:65px; top:510px; left:-925px;" src="Invisible.png">
+<img id="pillarL3" style="position:absolute; width:1px; height:65px; top:215px; left:-370px;" src="Invisible.png">
+<img id="pillarL4" style="position:absolute; width:1px; height:65px; top:510px; left:-370px;" src="Invisible.png">
+<img id="pillarR1" style="position:absolute; width:1px; height:65px; top:215px; left:-989px;" src="Invisible.png">
+<img id="pillarR2" style="position:absolute; width:1px; height:65px; top:510px; left:-989px;" src="Invisible.png">
+<img id="pillarR3" style="position:absolute; width:1px; height:65px; top:215px; left:-434px;" src="Invisible.png">
+<img id="pillarR4" style="position:absolute; width:1px; height:65px; top:510px; left:-434px;" src="Invisible.png">
+<img id="door" style="position:absolute; width:70px; height:100px; top:650px; left:550px;" src="door.png">
+<img id="door2" style="position:absolute; width:70px; height:100px; top:200px; left:1225px;" src="door.png">
 <img id="attackT" style="position:absolute; width:25px; height:75px; top:390px; left:-100px;" src="attackT.png">
 <img id="attackD" style="position:absolute; width:25px; height:75px; top:390px; left:-100px;" src="attackD.png">
 <img id="attackL" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackL.png">
 <img id="attackR" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackR.png">
-<img id="room" src="Room1.png">
+<img id="room" src="Room3.png" style="width:1280px; height:720px">
 </body>
 </html>
