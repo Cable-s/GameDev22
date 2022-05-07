@@ -140,7 +140,12 @@ function myCheckHit(){
    if ( myHitOther('player','myImg01') ){  
          alert('You Died');
          document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 1000 + 'px'
-         location = ''  
+         window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room3.html");  
+ }
+ if ( myHitOther('player','myImg02') ){  
+         alert('You Died');
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 1000 + 'px'
+         window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room3.html");  
  }
    if ( myHitOther('player','pillarL1') ){  
          document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
