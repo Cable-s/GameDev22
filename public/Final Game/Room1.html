@@ -288,13 +288,13 @@ function randomRoom() {
 document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 1000 + 'px';
 let r = Math.floor((Math.random() * 100) + 1);
 if ((r >= 1) && (r <= 50))  { 
-    window.location = "https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room3.html";      
+    window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room3.html");      
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
 } else if ((r >= 51) && (r <= 99)) {
-    window.location = "https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room2.html";     
+    window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room2.html");     
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
 } else if (r == 100) {
-    window.location = "https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room_capy.html";    
+    window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room_capy.html");    
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
 }
 }
