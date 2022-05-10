@@ -17,8 +17,8 @@ function retrieve() {
 
 function store() {
    localStorage.setItem('myStoredText', document.getElementById('myText1').value)
-   alert(document.getElementById('myText1').value + ' \nHas been stored')
    document.getElementById('myText1').value = ''
+   setTimeout(retrieve, 300)
 }
 
 var hearts = localStorage.getItem('myStoredText')
