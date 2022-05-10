@@ -1,83 +1,40 @@
 <html>
 <head>
-<stlye>
-</style>
+   <style>
+
+   </style>
 </head>
 <body>
 
 <script src="myscripts.js"></script>
-<body onload="{
-   load()
-}">
 
-<body onunload="{
-   load2()
+   <h2>t2a09-local-storage-name by Fred. Instructions:</h2>
+
+   <body onload="{
+      load()
+   }">
+   
+   <body onunload="{
+      unload()
 }">   
-
-Text example: <input id="myText1" type=hidden size=70 value="3"><br>
-
-<input id="store" type="button" value="Store Text" onClick="{
-   store()
-}">
-
-<input id="retrieve" type="button" value="Retrieve Text" onClick="{
-   retrieve()
-   display()
-}"> 
-
-<input id="clear" type="button" value="clear" onclick="{
-   clear()
-}">
-
-<input type="button" value="hit" onclick="{
-   hearts = parseInt(hearts - 1)
-   document.getElementById('div01').innerHTML = hearts
-   document.getElementById('myText1').value = hearts
-   document.getElementById('store').click()
-   display()
-}">
-
-<input type="button" value="heal" onclick="{
-   hearts = parseInt(hearts + 1)
-   document.getElementById('div01').innerHTML = hearts
-   document.getElementById('myText1').value = hearts
-   document.getElementById('store').click()
-   display()
-}">
-
-<div id="div01">...</div>
    
-
-
-
-<script>
+   Text example: <input id="myText1" type=number size=70 value=""><br>
    
-   var hearts = parseInt(document.getElementById('myText1').value)
-
-   function display() {
-      if (hearts == 2) {
-         display2()
-      }
-      if (hearts == 1) {
-         display1()
-      }
-      if (hearts == 0) {
-         alert("you died")
-      }
-   }
+   <input type="button" value="Store Text" onclick="{
+      store()
+   }">
    
+   <input type="button" value="Retrieve Text" onclick="{
+      retrieve()
+   }"> 
    
-   function display2() {
-      document.getElementById('heart1').style.left = -1000 + 'px'
-   }
-   function display1() {
-      document.getElementById('heart1').style.left = -1000 + 'px'
-      document.getElementById('heart2').style.left = -1000 + 'px'
-   }
-</script>
-   <img id="heart1" style="position:absolute; width:50px; height:50px; top:100px; left:100px; z-index:0" src="evilHonda.png">
-   <img id="heart2" style="position:absolute; width:50px; height:50px; top:100px; left:150px; z-index:0" src="evilHonda.png">
-   <img id="heart3" style="position:absolute; width:50px; height:50px; top:100px; left:200px; z-index:0" src="evilHonda.png">
-
+   <input type="button" value="Hit" onclick="{
+      Hit()
+   }">
+   
+<img id="heart1" style="position:absolute; width:50px; height:50px; top:525px; left:400px;" src="evilHonda.png">
+<img id="heart2" style="position:absolute; width:50px; height:50px; top:525px; left:450px;" src="evilHonda.png">
+<img id="heart3" style="position:absolute; width:50px; height:50px; top:525px; left:500px;" src="evilHonda.png">
+   
 </body>
 </html>
