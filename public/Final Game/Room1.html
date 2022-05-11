@@ -13,6 +13,7 @@
     load()
     document.getElementById('myText1').value = 3
     setTimeout(store, 300)
+    NumHearts();
  }">
  
 <body onunload="{
@@ -27,7 +28,7 @@
     retrieve()
  }"> 
 
-<input id="myText1" type=number size=0 value=""><br>
+<input id="myText1" type=number size=1 value=""><br>
 
 <script>
 function moving(event) {
@@ -164,7 +165,7 @@ function myCheckHit(){
          document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
  }
    if ( myHitOther('player','myImg01') ){  
-        Bruh()
+        IFrame()
  }
    if ( myHitOther('player','pillarL1') ){  
          document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
@@ -247,19 +248,20 @@ function ouch2() {
    health = health - 1;
 }
 
-function Bruh() {
-  IFrame()
-  setTimeout(Back, 1000)
-}
+//function Bruh() {
+//}
 
 function IFrame() {
+  
   document.getElementById('playerI').style.left = parseInt(document.getElementById('player').style.left)
   document.getElementById('playerI').style.top = parseInt(document.getElementById('player').style.top)
   document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 1000 + 'px'
+  setTimeout(Hit, 1000)
+  setTimeout(Back, 1000)
 }
 
+
 function Back() {
-  Hit()
   document.getElementById('player').style.left = parseInt(document.getElementById('playerI').style.left)
   document.getElementById('player').style.top = parseInt(document.getElementById('playerI').style.top)
   document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) - 1000 + 'px'
