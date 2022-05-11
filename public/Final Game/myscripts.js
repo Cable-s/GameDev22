@@ -32,15 +32,17 @@ function Hit() {
 }
 
 function NumHearts() {
-   if (hearts == 2) {
+   if ((hearts >= -260) && (hearts <= 2)) {
    document.getElementById('heart3').style.left = parseInt(document.getElementById('heart3').style.left) - 1000 + 'px'
-}  if (hearts == 1) {
+}  if ((hearts >= -400) && (hearts <= -261)) {
    document.getElementById('heart3').style.left = parseInt(document.getElementById('heart3').style.left) - 1000 + 'px'
    document.getElementById('heart2').style.left = parseInt(document.getElementById('heart2').style.left) - 1000 + 'px'
-} if (hearts <= 0) {
+} if ((hearts >= -550) && (hearts <= -401)) {
    document.getElementById('heart3').style.left = parseInt(document.getElementById('heart3').style.left) - 1000 + 'px'
    document.getElementById('heart2').style.left = parseInt(document.getElementById('heart3').style.left) - 1000 + 'px'
    document.getElementById('heart1').style.left = parseInt(document.getElementById('heart3').style.left) - 1000 + 'px'
    alert('You Died')
+   document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 1000 + 'px'
+   window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room1.html");  
 }
 }
