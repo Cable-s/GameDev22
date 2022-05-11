@@ -7,7 +7,29 @@
 <body>
 <body onload="myLoad()" id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="black.png" onKeyPress="moving(event)">
 
+  <script src="myscripts.js"></script>
 
+  <body onload="{
+      load()
+      document.getElementById('myText1').value = 3
+      setTimeout(store, 300)
+      NumHearts();
+   }">
+   
+  <body onunload="{
+      unload()
+  }">
+  
+  <input type="hidden" value="Store Text" onclick="{
+      store()
+   }">
+   
+  <input type="hidden" value="Retrieve Text" onclick="{
+      retrieve()
+   }"> 
+  
+  <input id="myText1" type=number size=1 value=""><br>
+  
 <script>
 function moving(event) {
 var dir = 0
@@ -33,18 +55,22 @@ if (myKey === 'f') {
 
 function moveU(){
   document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px';
+  document.getElementById('playerI').style.top = parseInt(document.getElementById('playerI').style.top) - 15 + 'px';
   dir = 1;
 }
 function moveD() {
   document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 15 + 'px';
+  document.getElementById('playerI').style.top = parseInt(document.getElementById('playerI').style.top) + 15 + 'px';
   dir = 2;
 }
 function moveL() {
   document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 15 + 'px';
+  document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) - 15 + 'px';
   dir = 3;
 }
 function moveR() {
   document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 15 + 'px';
+  document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) + 15 + 'px';
   dir = 4;
 }
 
@@ -211,6 +237,8 @@ function myLoad() {
 <img id="PwallL" style="position:absolute; width:40px; height:700px; top:0px; left:-20px;" src="Invisible.png">
 <img id="PwallR" style="position:absolute; width:40px; height:700px; top:0px; left:1280px;" src="Invisible.png">
 <img id="CwallB" style="position:absolute; width:320px; height:20px; top:240px; left:460px;" src="Invisible.png">
+<img id="playerI" style="position:absolute; width:50px; height:50px; top:400px; left:-1050px; z-index:0" src="ng">
+
 <img id="CwallT" style="position:absolute; width:320px; height:20px; top:160px; left:460px;" src="Invisible.png">
 <img id="CwallL" style="position:absolute; width:20px; height:100px; top:160px; left:440px;" src="Invisible.png">
 <img id="CwallR" style="position:absolute; width:20px; height:100px; top:160px; left:780px;" src="Invisible.png">
@@ -221,5 +249,9 @@ function myLoad() {
 <img id="attackL" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackL.png">
 <img id="attackR" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackR.png">
 <img id="room" src="Room-capy.png" style="width:1280px; height:720px">
+<img id="heart1" style="position:absolute; width:50px; height:50px; top:0px; left:0px; z-index:0" src="evilHonda.png">
+<img id="heart2" style="position:absolute; width:50px; height:50px; top:0px; left:50px; z-index:0" src="evilHonda.png">
+<img id="heart3" style="position:absolute; width:50px; height:50px; top:0px; left:100px; z-index:0" src="evilHonda.png">
+
 </body>
 </html>
