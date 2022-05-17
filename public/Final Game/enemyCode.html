@@ -7,22 +7,6 @@
 <body>
 <body onload="myLoad()" id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="black.png" onKeyPress="moving(event)">
 
-<script src="myscripts.js"></script>
-
- 
-<body onunload="{
-    unload()
-}">
-
-<input type="hidden" value="Store Text" onclick="{
-    store()
- }">
- 
-<input type="hidden" value="Retrieve Text" onclick="{
-    retrieve()
- }"> 
-
-<input id="myText1" type=number size=1 value="" style="display:none;"><br>
 
 <script>
 function moving(event) {
@@ -49,45 +33,41 @@ if (myKey === 'f') {
 
 function moveU(){
   document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px';
-  document.getElementById('playerI').style.top = parseInt(document.getElementById('playerI').style.top) - 15 + 'px';
   dir = 1;
 }
 function moveD() {
   document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 15 + 'px';
-  document.getElementById('playerI').style.top = parseInt(document.getElementById('playerI').style.top) + 15 + 'px';
   dir = 2;
 }
 function moveL() {
   document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 15 + 'px';
-  document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) - 15 + 'px';
   dir = 3;
 }
 function moveR() {
   document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 15 + 'px';
-  document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) + 15 + 'px';
   dir = 4;
 }
 
 function att() {
 if (dir == 4) {
-  document.getElementById('attackR').style.width = 25 + "px"
-  document.getElementById('attackR').style.height = 75 + "px"
-  document.getElementById('attackR').style.left = parseInt(document.getElementById('player').style.left) + 55 + 'px'
-  document.getElementById('attackR').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
+  document.getElementById('attackT').style.width = 25 + "px"
+  document.getElementById('attackT').style.height = 75 + "px"
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) + 55 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
   setTimeout(attM, 400)
 }
 if (dir == 3) {
-  document.getElementById('attackL').style.width = 25 + "px"
-  document.getElementById('attackL').style.height = 75 + "px"
-  document.getElementById('attackL').style.left = parseInt(document.getElementById('player').style.left) - 30 + 'px'
-  document.getElementById('attackL').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
+  document.getElementById('attackT').style.width = 25 + "px"
+  document.getElementById('attackT').style.height = 75 + "px"
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) - 30 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px'
   setTimeout(attM, 400)
 }
 if (dir == 2){
-  document.getElementById('attackD').style.width = 75 + "px"
-  document.getElementById('attackD').style.height = 25 + "px"
-  document.getElementById('attackD').style.left = parseInt(document.getElementById('player').style.left) - 13 + 'px'
-  document.getElementById('attackD').style.top = parseInt(document.getElementById('player').style.top) + 55 + 'px'
+  document.getElementById('attackT').style.width = 75 + "px"
+  document.getElementById('attackT').style.height = 25 + "px"
+  document.getElementById('attackT').style.left = parseInt(document.getElementById('player').style.left) - 13 + 'px'
+  document.getElementById('attackT').style.top = parseInt(document.getElementById('player').style.top) + 55 + 'px'
   setTimeout(attM, 400)
 }
 if (dir == 1){
@@ -102,9 +82,6 @@ if (dir == 1){
 
 function attM() {
   document.getElementById('attackT').style.left = parseInt(document.getElementById('attackT').style.left) - 1000 + 'px'
-  document.getElementById('attackD').style.left = parseInt(document.getElementById('attackD').style.left) - 1000 + 'px'
-  document.getElementById('attackL').style.left = parseInt(document.getElementById('attackL').style.left) - 1000 + 'px'
-  document.getElementById('attackR').style.left = parseInt(document.getElementById('attackR').style.left) - 1000 + 'px'
 }
 </script>
 
@@ -159,7 +136,9 @@ function myCheckHit(){
          document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
  }
    if ( myHitOther('player','myImg01') ){  
-        IFrame()
+         alert('You Died');
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 1000 + 'px'
+         location = ''  
  }
    if ( myHitOther('player','pillarL1') ){  
          document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
@@ -218,15 +197,6 @@ function myCheckHit(){
    if ( myHitOther('myImg01','attackT') ){  
          ouch();
  }
- if ( myHitOther('myImg01','attackD') ){  
-         ouch();
- }
- if ( myHitOther('myImg01','attackL') ){  
-         ouch();
- }
- if ( myHitOther('myImg01','attackR') ){  
-         ouch();
- }
 }
 
 var health = 3;
@@ -238,27 +208,9 @@ function ouch() {
     
   }  
 }
+
 function ouch2() {
    health = health - 1;
-}
-
-//function Bruh() {
-//}
-
-function IFrame() {
-  
-  document.getElementById('playerI').style.left = parseInt(document.getElementById('player').style.left)
-  document.getElementById('playerI').style.top = parseInt(document.getElementById('player').style.top)
-  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 1000 + 'px'
-  setTimeout(Hit, 1000)
-  setTimeout(Back, 1000)
-}
-
-
-function Back() {
-  document.getElementById('player').style.left = parseInt(document.getElementById('playerI').style.left)
-  document.getElementById('player').style.top = parseInt(document.getElementById('playerI').style.top)
-  document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) - 1000 + 'px'
 }
 </script>
 
@@ -273,7 +225,6 @@ function Back() {
 //Put other things every frame here (enemies moving, traps, etc)
    myCheckHit();
    timer1();
-   NumHearts();
 }">
 
 <input id="btnSt" type=hidden value="Start" onclick="{
@@ -300,8 +251,6 @@ if (t <= 20) {
 function myLoad() {
  document.getElementById('btnSt').click();
  document.getElementById('btnSt2').click();
- load()
-
 }
 </script>
 
@@ -326,14 +275,20 @@ if (h == 1) {
 function randomRoom() {
 document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 1000 + 'px';
 let r = Math.floor((Math.random() * 100) + 1);
-if ((r >= 1) && (r <= 50))  { 
-    window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room3.html");      
+if ((r >= 1) && (r <= 60))  { 
+    window.location = "https://www.javatpoint.com/";      //60%
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
-} else if ((r >= 51) && (r <= 99)) {
-    window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room2.html");     
+} else if ((r >= 61) && (r <= 65)) {
+    window.location = "https://www.javatpoint.com/";      //5%
+    parseInt(document.getElementById('player').style.top) + 1000 + 'px'
+} else if ((r >= 66) && (r <= 78)) {
+    window.location = "https://www.javatpoint.com/";      //13%
+    parseInt(document.getElementById('player').style.top) + 1000 + 'px'
+} else if ((r >= 79) && (r <= 99)) {
+    window.location = "https://www.javatpoint.com/";      //21%
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
 } else if (r == 100) {
-    window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room_capy.html");    
+    window.location = "google.com";      //1%
     parseInt(document.getElementById('player').style.top) + 1000 + 'px'
 }
 }
@@ -344,8 +299,7 @@ if ((r >= 1) && (r <= 50))  {
 <img id="pillarT2" style="position:absolute; width:64px; height:29px; top:475px; left:925px; z-index:1" src="black.png">
 <img id="pillarT3" style="position:absolute; width:64px; height:29px; top:180px; left:370px; z-index:1" src="black.png">
 <img id="pillarT4" style="position:absolute; width:64px; height:29px; top:475px; left:370px; z-index:1" src="black.png">
-<img id="player" style="position:absolute; width:50px; height:50px; top:400px; left:50px; z-index:1" src="evilHonda.png">
-<img id="playerI" style="position:absolute; width:50px; height:50px; top:400px; left:-1050px; z-index:0" src="TrollSad.png">
+<img id="player" style="position:absolute; width:50px; height:50px; top:400px; left:50px; z-index:0" src="evilHonda.png">
 <img id="myImg01" style="position:absolute; width:50px; height:50px; top:200px; left:610px;" src="evilHonda.png">
 <img id="baddie" style="position:absolute; width:1248px; height:120px; top:300px; left:0px;" src="Invisible.png">
 <img id="PwallB" style="position:absolute; width:1248px; height:120px; top:0px; left:0px;" src="Invisible.png">
@@ -373,13 +327,7 @@ if ((r >= 1) && (r <= 50))  {
 <img id="pillarR3" style="position:absolute; width:1px; height:65px; top:215px; left:434px;" src="Invisible.png">
 <img id="pillarR4" style="position:absolute; width:1px; height:65px; top:510px; left:434px;" src="Invisible.png">
 <img id="door" style="position:absolute; width:70px; height:100px; top:30px; left:625px;" src="door.png">
-<img id="attackT" style="position:absolute; width:25px; height:75px; top:390px; left:-100px;" src="attackT.png">
-<img id="attackD" style="position:absolute; width:25px; height:75px; top:390px; left:-100px;" src="attackD.png">
-<img id="attackL" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackL.png">
-<img id="attackR" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackR.png">
+<img id="attackT" style="position:absolute; width:25px; height:75px; top:390px; left:100px;" src="">
 <img id="room" src="Room1.png">
-<img id="heart1" style="position:absolute; width:50px; height:50px; top:0px; left:0px; z-index:0" src="hearts.png">
-<img id="heart2" style="position:absolute; width:50px; height:50px; top:0px; left:50px; z-index:0" src="hearts.png">
-<img id="heart3" style="position:absolute; width:50px; height:50px; top:0px; left:100px; z-index:0" src="hearts.png">
 </body>
 </html>

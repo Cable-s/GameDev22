@@ -282,9 +282,7 @@ function drown100(){
   document.getElementById('player').style.height = 1 + 'px'
 }
 function drownDie(){
-  alert('You Died');
-  document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 1000 + 'px'
-  location = ''  
+  IFrame()
 }
 
 function IFrame() {
@@ -315,6 +313,7 @@ function Back() {
 //Put other things every frame here (enemies moving, traps, etc)
    myCheckHit();
    timer1();
+   NumHearts();
 }">
 
 <input id="btnSt" type=hidden value="Start" onclick="{
