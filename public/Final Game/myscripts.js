@@ -52,6 +52,6 @@ function NumHearts() {
    document.getElementById('heart1').style.left = parseInt(document.getElementById('heart3').style.left) - 1000 + 'px'
    alert('You Died')
    document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 1000 + 'px'
-   window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room1.html");  
+   window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Title.html");  
 }
 }
