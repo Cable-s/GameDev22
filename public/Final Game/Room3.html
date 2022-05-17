@@ -320,7 +320,6 @@ function Back() {
 //Put other things every frame here (enemies moving, traps, etc)
    myCheckHit();
    timer1();
-   NumHearts();
 }">
 
 <input id="btnSt" type=hidden value="Start" onclick="{
@@ -347,6 +346,8 @@ if (t <= 20) {
 function myLoad() {
  document.getElementById('btnSt').click();
  document.getElementById('btnSt2').click();
+ NumHearts();
+
 }
 </script>
 
