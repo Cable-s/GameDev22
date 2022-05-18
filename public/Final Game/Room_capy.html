@@ -56,21 +56,25 @@ if (myKey === 'f') {
 function moveU(){
   document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px';
   document.getElementById('playerI').style.top = parseInt(document.getElementById('playerI').style.top) - 15 + 'px';
+  NumHearts();
   dir = 1;
 }
 function moveD() {
   document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 15 + 'px';
   document.getElementById('playerI').style.top = parseInt(document.getElementById('playerI').style.top) + 15 + 'px';
+  NumHearts();
   dir = 2;
 }
 function moveL() {
   document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 15 + 'px';
   document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) - 15 + 'px';
+  NumHearts();
   dir = 3;
 }
 function moveR() {
   document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 15 + 'px';
   document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) + 15 + 'px';
+  NumHearts();
   dir = 4;
 }
 
