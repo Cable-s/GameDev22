@@ -1,0 +1,336 @@
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+<body onload="myLoad()" id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="black.png" onKeyPress="moving(event)">
+
+  <script src="myscripts.js"></script>
+
+  <body onload="{
+      load()
+      document.getElementById('myText1').value = 3
+      setTimeout(store, 300)
+      setTimeout(NumHearts, 400)
+         }">
+   
+  <body onunload="{
+      unload()
+  }">
+  
+  <input type="hidden" value="Store Text" onclick="{
+      store()
+   }">
+   
+  <input type="hidden" value="Retrieve Text" onclick="{
+      retrieve()
+   }"> 
+  
+  <input id="myText1" type=number size=1 value="" style="display:none;"><br>
+  
+
+<script>
+   // global variables here
+   let myGlobalX = 0
+   let myClock
+
+//hitboxes
+
+//enemey with walls
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2)){
+       return true
+   }
+}
+
+function myCheckHit(){
+   if ( myHitOther('myImg01','wallT') ){  
+         document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 + 'px'
+       }
+   if ( myHitOther('myImg01','wallB') ){  
+         document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
+ }
+   if ( myHitOther('myImg01','wallL') ){  
+         document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
+ }
+   if ( myHitOther('myImg01','wallR') ){  
+         document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 10 + 'px'
+ }
+   if ( myHitOther('player','PwallT') ){  
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
+ }
+   if ( myHitOther('player','PwallB') ){  
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
+ }
+   if ( myHitOther('player','PwallL') ){  
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 20 + 'px' 
+ }
+   if ( myHitOther('player','PwallR') ){  
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
+ }
+   if ( myHitOther('player','myImg01') ){  
+    IFrame()
+ }
+   if ( myHitOther('player','pillarL1') ){  
+    drown() }
+   if ( myHitOther('player','pillarL2') ){  
+    drown() }
+   if ( myHitOther('player','pillarL3') ){  
+    drown() }
+   if ( myHitOther('player','pillarL4') ){  
+    drown() }
+   if ( myHitOther('player','pillarR1') ){  
+    drown() }
+   if ( myHitOther('player','pillarR2') ){  
+    drown() }
+   if ( myHitOther('player','pillarR3') ){  
+    drown() }
+   if ( myHitOther('player','pillarR4') ){  
+    drown() }
+   if ( myHitOther('player','pillarT1') ){  
+    drown()}
+   if ( myHitOther('player','pillarT2') ){  
+    drown()}
+   if ( myHitOther('player','pillarT3') ){  
+    drown() }
+   if ( myHitOther('player','pillarT4') ){  
+    drown() }
+   if ( myHitOther('player','pillarB1') ){ 
+      drown() }
+   if ( myHitOther('player','pillarB2') ){  
+    drown()}
+   if ( myHitOther('player','pillarB3') ){  
+    drown() }
+   if ( myHitOther('player','pillarB4') ){  
+    drown() }
+    if ( myHitOther('player','pillarS3') ){  
+    drown() }
+    if ( myHitOther('player','pillarS4') ){  
+    drown() }
+   if ( myHitOther('player','door') ){  
+         randomRoom()
+ }
+ if ( myHitOther('player','door2') ){  
+         randomRoom()
+ }
+   if ( myHitOther('myImg01','baddie') ){  
+         document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 + 'px'
+ }   
+   if ( myHitOther('myImg01','attackT') ){  
+         ouch();
+ }
+ if ( myHitOther('myImg01','attackD') ){  
+         ouch();
+ }
+ if ( myHitOther('myImg01','attackL') ){  
+         ouch();
+ }
+ if ( myHitOther('myImg01','attackR') ){  
+         ouch();
+ }
+}
+
+var health = 3;
+function ouch() {
+   setTimeout(ouch2, 2000)
+    if (health <= 0) {
+    document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 1000 + 'px' 
+   } else {
+    
+  }  
+}
+
+function ouch2() {
+   health = health - 1;
+}
+
+function drown() {
+    document.getElementById('pillarT1').style.top = -100 + 'px'
+    document.getElementById('pillarT2').style.top = -100 + 'px'
+    document.getElementById('pillarT3').style.top = -100 + 'px'
+    document.getElementById('pillarT4').style.top = -100 + 'px'
+    document.getElementById('pillarB1').style.top = -100 + 'px'
+    document.getElementById('pillarB2').style.top = -100 + 'px'
+    document.getElementById('pillarB3').style.top = -100 + 'px'
+    document.getElementById('pillarB4').style.top = -100 + 'px'
+    document.getElementById('pillarL1').style.top = -100 + 'px'
+    document.getElementById('pillarL2').style.top = -100 + 'px'
+    document.getElementById('pillarL3').style.top = -100 + 'px'
+    document.getElementById('pillarL4').style.top = -100 + 'px'
+    document.getElementById('pillarR1').style.top = -100 + 'px'
+    document.getElementById('pillarR2').style.top = -100 + 'px'
+    document.getElementById('pillarR3').style.top = -100 + 'px'
+    document.getElementById('pillarR4').style.top = -100 + 'px'
+    document.getElementById('pillarS3').style.top = -100 + 'px'
+    document.getElementById('pillarS4').style.top = -100 + 'px'
+    setTimeout(drown25, 200)
+    setTimeout(drown50, 400)
+    setTimeout(drown75, 600)
+    setTimeout(drown100, 800)
+    setTimeout(drownDie, 1000)
+}
+function drown25(){
+  document.getElementById('player').style.width = 38 + 'px'
+  document.getElementById('player').style.height = 38 + 'px'
+}
+function drown50(){
+  document.getElementById('player').style.width = 25 + 'px'
+  document.getElementById('player').style.height = 25 + 'px'
+}
+function drown75(){
+  document.getElementById('player').style.width = 13 + 'px'
+  document.getElementById('player').style.height = 13 + 'px'
+}
+function drown100(){
+  document.getElementById('player').style.width = 1 + 'px'
+  document.getElementById('player').style.height = 1 + 'px'
+}
+function drownDie(){
+  IFrame()
+}
+
+function IFrame() {
+  
+  document.getElementById('playerI').style.left = parseInt(document.getElementById('player').style.left)
+  document.getElementById('playerI').style.top = parseInt(document.getElementById('player').style.top)
+  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 1000 + 'px'
+  setTimeout(Back, 1000)
+}
+
+
+function Back() {
+    alert("You Died");
+    window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Title.html");  
+}
+</script>
+
+
+
+<input id="myButton01" type=hidden value="background move left" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX -= 5
+  myTemp =  myGlobalX + 'px 0px'
+  document.getElementById('myBody').style.backgroundPosition =myTemp
+//Put other things every frame here (enemies moving, traps, etc)
+   myCheckHit();
+   timer1();
+}">
+
+<input id="btnSt" type=hidden value="Start" onclick="{
+  clearInterval(myClock)
+  myClock = setInterval(function(){
+     document.getElementById('myButton01').click() 
+  }, 17)
+    
+}">
+
+<script>
+function timer1() {
+let t = Math.floor((Math.random() * 100) + 1);
+if (t <= 20) {
+   badMove()
+} else {
+   
+}
+
+}
+</script>
+
+<script>
+function myLoad() {
+ document.getElementById('btnSt').click();
+ document.getElementById('btnSt2').click();
+ NumHearts();
+
+}
+</script>
+
+<script>
+function badMove() {
+let h = Math.floor((Math.random() * 6) + 1);
+if (h == 1) {
+  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 5 + 'px'
+}else if (h == 2){
+  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 5 + 'px'
+}else if (h == 3){
+  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 5 + 'px'
+}else if (h == 4){
+  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 5 + 'px'
+}else{
+  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left)
+}
+}
+
+</script>
+<script>
+function randomRoom() {
+document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 1000 + 'px';
+let r = Math.floor((Math.random() * 100) + 1);
+if ((r >= 1) && (r <= 100))  { 
+  window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room3.html");      //60%
+}
+}
+</script>
+
+<!-- objects -->
+<img id="player" style="position:absolute; width:50px; height:50px; top:400px; left:130px; z-index:0" src="evilHonda.png">
+<img id="myImg01" style="position:absolute; width:50px; height:50px; top:350px; left:610px;" src="evilHonda.png">
+<img id="baddie" style="position:absolute; width:1248px; height:120px; top:520px; left:0px;" src="Invisible.png">
+<img id="PwallB" style="position:absolute; width:1248px; height:75px; top:0px; left:0px;" src="Invisible.png">
+<img id="PwallT" style="position:absolute; width:1248px; height:50px; top:680px; left:0px;" src="Invisible.png">
+<img id="PwallL" style="position:absolute; width:40px; height:700px; top:0px; left:0px;" src="Invisible.png">
+<img id="PwallR" style="position:absolute; width:100px; height:700px; top:0px; left:1248px;" src="Invisible.png">
+<img id="wallB" style="position:absolute; width:1248px; height:120px; top:180px; left:0px;" src="Invisible.png">
+<img id="wallT" style="position:absolute; width:1248px; height:100px; top:700px; left:0px;" src="Invisible.png">
+<img id="wallL" style="position:absolute; width:40px; height:700px; top:0px; left:500px;" src="Invisible.png">
+<img id="wallR" style="position:absolute; width:40px; height:700px; top:0px; left:775px;" src="Invisible.png">
+<img id="playerI" style="position:absolute; width:50px; height:50px; top:400px; left:-1050px; z-index:0" src="TrollSad.png">
+
+<img id="pillarB1" style="position:absolute; width:410px; height:20px; top:280px; left:70px;" src="Invisible.png">
+<img id="pillarB3" style="position:absolute; width:430px; height:20px; top:260px; left:70px;" src="Invisible.png">
+<img id="pillarB4" style="position:absolute; width:450px; height:20px; top:240px; left:70px;" src="Invisible.png">
+<img id="pillarT3" style="position:absolute; width:470px; height:20px; top:220px; left:70px;" src="Invisible.png">
+
+<img id="pillarB2" style="position:absolute; width:440px; height:20px; top:275px; left:855px;" src="Invisible.png">
+<img id="pillarT4" style="position:absolute; width:460px; height:20px; top:255px; left:835px;" src="Invisible.png">
+<img id="pillarL1" style="position:absolute; width:480px; height:20px; top:235px; left:815px;" src="Invisible.png">
+<img id="pillarL2" style="position:absolute; width:500px; height:20px; top:215px; left:795px;" src="Invisible.png">
+
+<img id="pillarT1" style="position:absolute; width:440px; height:20px; top:515px; left:60px;" src="Invisible.png">
+<img id="pillarL3" style="position:absolute; width:460px; height:20px; top:535px; left:60px;" src="Invisible.png">
+<img id="pillarL4" style="position:absolute; width:480px; height:20px; top:555px; left:60px;" src="Invisible.png">
+<img id="pillarR1" style="position:absolute; width:1000px; height:20px; top:575px; left:60px;" src="Invisible.png">
+
+<img id="pillarT2" style="position:absolute; width:450px; height:20px; top:515px; left:825px;" src="Invisible.png">
+<img id="pillarR2" style="position:absolute; width:470px; height:20px; top:535px; left:805px;" src="Invisible.png">
+<img id="pillarR3" style="position:absolute; width:490px; height:20px; top:555px; left:785px;" src="Invisible.png">
+<img id="pillarR4" style="position:absolute; width:510px; height:20px; top:575px; left:765px;" src="Invisible.png">
+
+<img id="pillarS3" style="position:absolute; width:20px; height:140px; top:85px; left:775px;" src="Invisible.png">
+<img id="pillarS4" style="position:absolute; width:20px; height:140px; top:85px; left:535px;" src="Invisible.png">
+
+<img id="door" style="position:absolute; width:70px; height:100px; top:0px; left:625px;" src="door.png">
+<img id="door2" style="position:absolute; width:70px; height:100px; top:350px; left:1200px;" src="door.png">
+<img id="attackT" style="position:absolute; width:25px; height:75px; top:390px; left:-100px;" src="attackT.png">
+<img id="attackD" style="position:absolute; width:25px; height:75px; top:390px; left:-100px;" src="attackD.png">
+<img id="attackL" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackL.png">
+<img id="attackR" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackR.png">
+<img id="room" src="Room2.png" style="width:1280px; height:720px">
+<img id="heart1" style="position:absolute; width:50px; height:50px; top:0px; left:0px; z-index:0" src="hearts.png">
+<img id="heart2" style="position:absolute; width:50px; height:50px; top:0px; left:50px; z-index:0" src="hearts.png">
+<img id="heart3" style="position:absolute; width:50px; height:50px; top:0px; left:100px; z-index:0" src="hearts.png">
+</body>
+</html>
