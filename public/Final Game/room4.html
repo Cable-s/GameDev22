@@ -9,6 +9,13 @@
 
   <script src="myscripts.js"></script>
 
+  <input id="yesbtn" type="button" value="Yes" style="position:absolute; top:600px; left:-450px; width:175px; height:50px" onclick="{
+    yes()
+ }">
+ <input id="nobtn" type="button" value="No" style="position:absolute; top:600px; left:-650px; width:175px; height:50px" onclick="{
+    no()
+ }">
+
   <body onload="{
       load()
       document.getElementById('myText1').value = 3
@@ -109,11 +116,11 @@ function myCheckHit(){
    if ( myHitOther('player','pillarT4') ){  
     drown() }
    if ( myHitOther('player','pillarB1') ){ 
-      drown() }
+      message() }
    if ( myHitOther('player','pillarB2') ){  
     drown()}
    if ( myHitOther('player','pillarB3') ){  
-    drown() }
+    fall() }
    if ( myHitOther('player','pillarB4') ){  
     drown() }
     if ( myHitOther('player','pillarS3') ){  
@@ -157,49 +164,11 @@ function ouch2() {
    health = health - 1;
 }
 
-function drown() {
-    document.getElementById('pillarT1').style.top = -100 + 'px'
-    document.getElementById('pillarT2').style.top = -100 + 'px'
-    document.getElementById('pillarT3').style.top = -100 + 'px'
-    document.getElementById('pillarT4').style.top = -100 + 'px'
-    document.getElementById('pillarB1').style.top = -100 + 'px'
-    document.getElementById('pillarB2').style.top = -100 + 'px'
-    document.getElementById('pillarB3').style.top = -100 + 'px'
-    document.getElementById('pillarB4').style.top = -100 + 'px'
-    document.getElementById('pillarL1').style.top = -100 + 'px'
-    document.getElementById('pillarL2').style.top = -100 + 'px'
-    document.getElementById('pillarL3').style.top = -100 + 'px'
-    document.getElementById('pillarL4').style.top = -100 + 'px'
-    document.getElementById('pillarR1').style.top = -100 + 'px'
-    document.getElementById('pillarR2').style.top = -100 + 'px'
-    document.getElementById('pillarR3').style.top = -100 + 'px'
-    document.getElementById('pillarR4').style.top = -100 + 'px'
-    document.getElementById('pillarS3').style.top = -100 + 'px'
-    document.getElementById('pillarS4').style.top = -100 + 'px'
-    setTimeout(drown25, 200)
-    setTimeout(drown50, 400)
-    setTimeout(drown75, 600)
-    setTimeout(drown100, 800)
-    setTimeout(drownDie, 1000)
-}
-function drown25(){
-  document.getElementById('player').style.width = 38 + 'px'
-  document.getElementById('player').style.height = 38 + 'px'
-}
-function drown50(){
-  document.getElementById('player').style.width = 25 + 'px'
-  document.getElementById('player').style.height = 25 + 'px'
-}
-function drown75(){
-  document.getElementById('player').style.width = 13 + 'px'
-  document.getElementById('player').style.height = 13 + 'px'
-}
-function drown100(){
-  document.getElementById('player').style.width = 1 + 'px'
-  document.getElementById('player').style.height = 1 + 'px'
-}
-function drownDie(){
-  IFrame()
+function message() {
+  alert('Hello, young troller, You wish to procede deeper into the depths? I must advise you against this wish it is a dangerous place.');
+  document.getElementById('pillarB1').style.top = parseInt(document.getElementById('pillarB1').style.top) - 1000 + 'px'
+  document.getElementById('nobtn').style.left = 650 + 'px'
+  document.getElementById('yesbtn').style.left = 450 + 'px'
 }
 
 function IFrame() {
@@ -214,6 +183,25 @@ function IFrame() {
 function Back() {
     alert("You Died");
     window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Title.html");  
+
+}
+
+function yes() {
+  alert('very well.')
+  window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room5.html");
+  document.getElementById('nobtn').style.left = -650 + 'px'
+  document.getElementById('yesbtn').style.left = -450 + 'px'
+}
+
+function no() {
+  alert("wise decision, but the troll king was be eager to meet you..")
+  document.getElementById('pillarB3').style.left = 250 + 'px'
+  document.getElementById('nobtn').style.left = -650 + 'px'
+  document.getElementById('yesbtn').style.left = -450 + 'px'
+}
+
+function fall() {
+  window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room5.html");  
 }
 </script>
 
@@ -286,21 +274,23 @@ if ((r >= 1) && (r <= 100))  {
 </script>
 
 <!-- objects -->
-<img id="player" style="position:absolute; width:50px; height:50px; top:400px; left:130px; z-index:0" src="evilHonda.png">
-<img id="myImg01" style="position:absolute; width:50px; height:50px; top:350px; left:610px;" src="evilHonda.png">
+<img id="player" style="position:absolute; width:50px; height:50px; top:360px; left:310px; z-index:0" src="evilHonda.png">
+<img id="myImg01" style="position:absolute; width:50px; height:50px; top:350px; left:-10610px;" src="evilHonda.png">
 <img id="baddie" style="position:absolute; width:1248px; height:120px; top:520px; left:0px;" src="Invisible.png">
-<img id="PwallB" style="position:absolute; width:1248px; height:75px; top:0px; left:0px;" src="Invisible.png">
-<img id="PwallT" style="position:absolute; width:1248px; height:50px; top:680px; left:0px;" src="Invisible.png">
-<img id="PwallL" style="position:absolute; width:40px; height:700px; top:0px; left:0px;" src="Invisible.png">
-<img id="PwallR" style="position:absolute; width:100px; height:700px; top:0px; left:1248px;" src="Invisible.png">
+
+<img id="PwallB" style="position:absolute; width:1248px; height:75px; top:130px; left:0px;" src="Invisible.png">
+<img id="PwallT" style="position:absolute; width:1248px; height:50px; top:550px; left:0px;" src="Invisible.png">
+<img id="PwallL" style="position:absolute; width:40px; height:700px; top:0px; left:220px;" src="Invisible.png">
+<img id="PwallR" style="position:absolute; width:100px; height:700px; top:0px; left:780px;" src="Invisible.png">
+
 <img id="wallB" style="position:absolute; width:1248px; height:120px; top:180px; left:0px;" src="Invisible.png">
 <img id="wallT" style="position:absolute; width:1248px; height:100px; top:700px; left:0px;" src="Invisible.png">
 <img id="wallL" style="position:absolute; width:40px; height:700px; top:0px; left:500px;" src="Invisible.png">
 <img id="wallR" style="position:absolute; width:40px; height:700px; top:0px; left:775px;" src="Invisible.png">
 <img id="playerI" style="position:absolute; width:50px; height:50px; top:400px; left:-1050px; z-index:0" src="TrollSad.png">
 
-<img id="pillarB1" style="position:absolute; width:410px; height:20px; top:280px; left:70px;" src="Invisible.png">
-<img id="pillarB3" style="position:absolute; width:430px; height:20px; top:260px; left:70px;" src="Invisible.png">
+<img id="pillarB1" style="position:absolute; width:50px; height:150px; top:310px; left:730px;" src="Invisible.png">
+<img id="pillarB3" style="position:absolute; width:100px; height:1000px; top:0px; left:-100px;" src="Invisible.png">
 <img id="pillarB4" style="position:absolute; width:450px; height:20px; top:240px; left:70px;" src="Invisible.png">
 <img id="pillarT3" style="position:absolute; width:470px; height:20px; top:220px; left:70px;" src="Invisible.png">
 
@@ -322,13 +312,13 @@ if ((r >= 1) && (r <= 100))  {
 <img id="pillarS3" style="position:absolute; width:20px; height:140px; top:85px; left:775px;" src="Invisible.png">
 <img id="pillarS4" style="position:absolute; width:20px; height:140px; top:85px; left:535px;" src="Invisible.png">
 
-<img id="door" style="position:absolute; width:70px; height:100px; top:0px; left:625px;" src="door.png">
-<img id="door2" style="position:absolute; width:70px; height:100px; top:350px; left:1200px;" src="door.png">
+<img id="door" style="position:absolute; width:70px; height:100px; top:320px; left:200px;" src="door.png">
+
 <img id="attackT" style="position:absolute; width:25px; height:75px; top:390px; left:-100px;" src="attackT.png">
 <img id="attackD" style="position:absolute; width:25px; height:75px; top:390px; left:-100px;" src="attackD.png">
 <img id="attackL" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackL.png">
 <img id="attackR" style="position:absolute; width:75px; height:25px; top:390px; left:-100px;" src="attackR.png">
-<img id="room" src="Room2.png" style="width:1280px; height:720px">
+<img id="room" src="Room4.png" style="width:1280px; height:720px">
 <img id="heart1" style="position:absolute; width:50px; height:50px; top:0px; left:0px; z-index:0" src="hearts.png">
 <img id="heart2" style="position:absolute; width:50px; height:50px; top:0px; left:50px; z-index:0" src="hearts.png">
 <img id="heart3" style="position:absolute; width:50px; height:50px; top:0px; left:100px; z-index:0" src="hearts.png">
