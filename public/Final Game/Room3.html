@@ -300,8 +300,10 @@ if (t == 1) {
 function randomRoom() {
 document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 1000 + 'px';
 let r = Math.floor((Math.random() * 100) + 1);
-if ((r >= 1) && (r <= 100))  { 
+if ((r >= 1) && (r <= 75))  { 
     window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room2.html"); 
+} else if ((r >= 76) && (r <= 100)) {
+    window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room4.html")
 }
 }
 </script>
