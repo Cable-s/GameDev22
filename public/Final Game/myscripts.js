@@ -15,6 +15,8 @@ let mySound14 = new Audio('bombexplode.mp3')
 let mySound15 = new Audio('bomb_warning.mp3')
 let mySound16 = new Audio('honda.mp3')
 let mySound17 = new Audio('go.mp3')
+let mySound18 = new Audio('laser.mp3')
+let mySound19 = new Audio('goldtroll.mp3')
 
 
 mySound8.volume = 0.25;
@@ -27,7 +29,8 @@ mySound11.volume = 0.15;
 mySound12.volume = 0.15;
 mySound13.volume = 0.05;
 mySound17.volume = 0.20;
-
+mySound18.volume = 0.5;
+mySound19.volume = 0.5;
 
 
 function load() {
@@ -191,4 +194,5 @@ function moving(event) {
      document.getElementById('attackT').style.left = parseInt(document.getElementById('attackT').style.left) - 1000 + 'px'
      document.getElementById('attackD').style.left = parseInt(document.getElementById('attackD').style.left) - 1000 + 'px'
      document.getElementById('attackL').style.left = parseInt(document.getElementById('attackL').style.left) - 1000 + 'px'
-     document.getElementById('attackR').style.left = parseInt(document.getElementById('attackR').style.left) - 1000 + 'px'}
+     document.getElementById('attackR').style.left = parseInt(document.getElementById('attackR').style.left) - 1000 + 'px'
+   }

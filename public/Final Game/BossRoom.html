@@ -409,6 +409,7 @@ function laser() {
   setTimeout(beam, 1500)
 }
 function beam() {
+  mySound18.play();
   document.getElementById('beam').style.top = parseInt(document.getElementById('laser').style.top) - 5 + 'px'
   document.getElementById('beam2').style.top = parseInt(document.getElementById('laser2').style.top) - 5 + 'px'
   document.getElementById('beam3').style.top = parseInt(document.getElementById('laser3').style.top) - 5 + 'px'
@@ -431,6 +432,7 @@ function attack3() {
 }
 
 function gold() {
+  mySound19.play();
   u = Math.floor((Math.random() * 550) + 1);
   u2 = Math.floor((Math.random() * 550) + 1);
   u3 = u2 + 650
