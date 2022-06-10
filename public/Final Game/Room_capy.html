@@ -11,9 +11,6 @@
 
   <body onload="{
       load()
-      document.getElementById('myText1').value = 3
-      setTimeout(store, 300)
-      NumHearts();
    }">
    
   <body onunload="{
@@ -128,7 +125,6 @@ if ((r >= 1) && (r <= 33))  {
 //Put Hitboxes here
 //Put other things every frame here (enemies moving, traps, etc)
    myCheckHit();
-   timer1();
    NumHearts();
 }">
 
@@ -143,9 +139,6 @@ if ((r >= 1) && (r <= 33))  {
 <script>
 function myLoad() {
  document.getElementById('btnSt').click();
- document.getElementById('btnSt2').click();
- NumHearts();
-
 }
 </script>
 
