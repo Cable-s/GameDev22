@@ -1,3 +1,33 @@
+let mySound1 = new Audio('Death.mp3')
+let mySound2 = new Audio('hurt1.mp3')
+let mySound3 = new Audio('hurt2.mp3')
+let mySound4 = new Audio('hurt3.mp3')
+let mySound5 = new Audio('Ehurt1.mp3')
+let mySound6 = new Audio('Ehurt2.mp3')
+let mySound7 = new Audio('Ehurt3.mp3')
+let mySound8 = new Audio('walk.mp3')
+let mySound9 = new Audio('background.mp3')
+let mySound10 = new Audio('BossMusic1.mp3')
+let mySound11 = new Audio('BossMusic2.mp3')
+let mySound12 = new Audio('BossMusic3.mp3')
+let mySound13 = new Audio('BossMusic4.mp3')
+let mySound14 = new Audio('bombexplode.mp3')
+let mySound15 = new Audio('bomb_warning.mp3')
+let mySound16 = new Audio('honda.mp3')
+
+mySound8.volume = 0.25;
+mySound7.volume = 0.25;
+mySound6.volume = 0.25;
+mySound5.volume = 0.25;
+mySound9.volume = 0.15;
+mySound10.volume = 0.15;
+mySound11.volume = 0.15;
+mySound12.volume = 0.15;
+mySound13.volume = 0.05;
+
+
+
+
 function load() {
    myStorage = localStorage.getItem('myStoredText')
    if(myStorage  != null){
@@ -47,6 +77,7 @@ function NumHearts() {
    document.getElementById('heart3').style.left = parseInt(document.getElementById('heart3').style.left) - 1000 + 'px'
    document.getElementById('heart2').style.left = parseInt(document.getElementById('heart2').style.left) - 1000 + 'px'
 } if (hearts == 0) {
+   mySound1.play();
    document.getElementById('heart3').style.left = parseInt(document.getElementById('heart3').style.left) - 1000 + 'px'
    document.getElementById('heart2').style.left = parseInt(document.getElementById('heart3').style.left) - 1000 + 'px'
    document.getElementById('heart1').style.left = parseInt(document.getElementById('heart3').style.left) - 1000 + 'px'
@@ -56,8 +87,10 @@ function NumHearts() {
 }
 }
 
+var bruh = 0;
+
 function moving(event) {
-   var dir = 0
+   var dir = 0;
    var myKey = event.key;
    
    if (myKey === 'd') {
@@ -81,26 +114,38 @@ function moving(event) {
    function moveU(){
      document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 15 + 'px';
      document.getElementById('playerI').style.top = parseInt(document.getElementById('playerI').style.top) - 15 + 'px';
+     mySound8.play();
      NumHearts();
      dir = 1;
+     bruh = parseInt(bruh + 1);
+     ambp();
    }
    function moveD() {
      document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 15 + 'px';
      document.getElementById('playerI').style.top = parseInt(document.getElementById('playerI').style.top) + 15 + 'px';
+     mySound8.play();
      NumHearts();
      dir = 2;
+     bruh = parseInt(bruh + 1);
+     ambp();
    }
    function moveL() {
      document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 15 + 'px';
      document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) - 15 + 'px';
+     mySound8.play();
      NumHearts();
      dir = 3;
+     bruh = parseInt(bruh + 1);
+     ambp();
    }
    function moveR() {
      document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 15 + 'px';
      document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) + 15 + 'px';
+     mySound8.play();
      NumHearts();
      dir = 4;
+     bruh = parseInt(bruh + 1);
+     ambp();
    }
    function att() {
      if (dir == 4) {
@@ -132,6 +177,12 @@ function moving(event) {
      setTimeout(attM, 400)
    }
    
+   }
+
+   function ambp() {
+      if (bruh == 1) {
+         mySound9.play();
+      }
    }
    
    function attM() {

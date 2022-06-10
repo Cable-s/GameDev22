@@ -8,6 +8,8 @@
 <body onload="myLoad()" id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="black.png" onKeyPress="moving(event)">
 
   <script src="myscripts.js"></script>
+  <script src="heart.js"></script>
+
 
   <body onload="{
       load()
@@ -145,6 +147,7 @@ function myCheckHit(){
 
 var health = 3;
 function ouch() {
+  Enoise()
    setTimeout(ouch2, 2000)
     if (health <= 0) {
     document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 1000 + 'px' 
@@ -155,6 +158,17 @@ function ouch() {
 
 function ouch2() {
    health = health - 1;
+}
+
+function Enoise() {
+  let m = Math.floor((Math.random() * 3) + 1);
+  if (m == 1) {
+    mySound5.play()
+  } else if (m == 2) {
+    mySound6.play()
+  } else if (m == 3) {
+    mySound7.play()
+  }
 }
 
 function drown() {
@@ -206,12 +220,23 @@ function IFrame() {
   
   document.getElementById('playerI').style.left = parseInt(document.getElementById('player').style.left)
   document.getElementById('playerI').style.top = parseInt(document.getElementById('player').style.top)
-  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 1000 + 'px'
+  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 10000 + 'px'
+  noise();
   setTimeout(Back, 1000)
 }
-
+function noise() {
+  let m = Math.floor((Math.random() * 3) + 1);
+  if (m = 1) {
+    mySound2.play()
+  } else if (m = 2) {
+    mySound3.play()
+  } else if (m = 3) {
+    mySound4.play()
+  }
+}
 
 function Back() {
+    mySound1.play()
     alert("You Died");
     window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Title.html");  
 }
@@ -252,8 +277,6 @@ if (t <= 20) {
 <script>
 function myLoad() {
  document.getElementById('btnSt').click();
- document.getElementById('btnSt2').click();
- NumHearts();
 
 }
 </script>
@@ -299,7 +322,7 @@ if ((r >= 1) && (r <= 75))  {
 <img id="wallT" style="position:absolute; width:1248px; height:100px; top:700px; left:0px;" src="Invisible.png">
 <img id="wallL" style="position:absolute; width:40px; height:700px; top:0px; left:500px;" src="Invisible.png">
 <img id="wallR" style="position:absolute; width:40px; height:700px; top:0px; left:775px;" src="Invisible.png">
-<img id="playerI" style="position:absolute; width:50px; height:50px; top:400px; left:-1050px; z-index:0" src="TrollSad.png">
+<img id="playerI" style="position:absolute; width:50px; height:50px; top:400px; left:-10050px; z-index:0" src="TrollSad.png">
 
 <img id="pillarB1" style="position:absolute; width:410px; height:20px; top:280px; left:70px;" src="Invisible.png">
 <img id="pillarB3" style="position:absolute; width:430px; height:20px; top:260px; left:70px;" src="Invisible.png">

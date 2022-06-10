@@ -8,6 +8,8 @@
 <body onload="myLoad()" id="myBody" style="background-repeat:repeat; overflow:hidden; background-size: 100%" background="black.png" onKeyPress="moving(event)">
 
 <script src="myscripts.js"></script>
+<script src="heart.js"></script>
+
 
  
 <body onunload="{
@@ -50,17 +52,17 @@ function myHitOther(my1,my2){
 }
 
 function myCheckHit(){
-   if ( myHitOther('myImg01','wallT') ){  
-         document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 + 'px'
+   if ( myHitOther('boss','wallT') ){  
+         document.getElementById('boss').style.top = parseInt(document.getElementById('boss').style.top) - 10 + 'px'
        }
-   if ( myHitOther('myImg01','wallB') ){  
-         document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
+   if ( myHitOther('boss','wallB') ){  
+         document.getElementById('boss').style.top = parseInt(document.getElementById('boss').style.top) + 10 + 'px'
  }
-   if ( myHitOther('myImg01','wallL') ){  
-         document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
+   if ( myHitOther('boss','wallL') ){  
+         document.getElementById('boss').style.left = parseInt(document.getElementById('boss').style.left) + 10 + 'px'
  }
-   if ( myHitOther('myImg01','wallR') ){  
-         document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 10 + 'px'
+   if ( myHitOther('boss','wallR') ){  
+         document.getElementById('boss').style.left = parseInt(document.getElementById('boss').style.left) - 10 + 'px'
  }
    if ( myHitOther('player','PwallT') ){  
          document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
@@ -74,7 +76,7 @@ function myCheckHit(){
    if ( myHitOther('player','PwallR') ){  
          document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 20 + 'px'
  }
-   if ( myHitOther('player','myImg01') ){  
+   if ( myHitOther('player','boss') ){  
         IFrame()
  }
    if ( myHitOther('player','pillarL1') ){  
@@ -108,10 +110,8 @@ function myCheckHit(){
          document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
  }
    if ( myHitOther('player','pillarT3') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
  }
    if ( myHitOther('player','pillarT4') ){  
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 20 + 'px'
  }
    if ( myHitOther('player','pillarB1') ){  
          document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 20 + 'px'
@@ -128,20 +128,56 @@ function myCheckHit(){
    if ( myHitOther('player','door') ){  
          randomRoom()
  }
-   if ( myHitOther('myImg01','baddie') ){  
-         document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 + 'px'
+   if ( myHitOther('boss','baddie') ){  
+         document.getElementById('boss').style.top = parseInt(document.getElementById('boss').style.top) - 10 + 'px'
  }   
-   if ( myHitOther('myImg01','attackT') ){  
+   if ( myHitOther('boss','attackT') ){  
          ouch();
  }
- if ( myHitOther('myImg01','attackD') ){  
+ if ( myHitOther('boss','attackD') ){  
          ouch();
  }
- if ( myHitOther('myImg01','attackL') ){  
+ if ( myHitOther('boss','attackL') ){  
          ouch();
  }
- if ( myHitOther('myImg01','attackR') ){  
+ if ( myHitOther('boss','attackR') ){  
          ouch();
+ }
+ if ( myHitOther('fire','player') ){  
+        IFrame();
+ }
+ if ( myHitOther('fire2','player') ){  
+        IFrame();
+ }
+ if ( myHitOther('fire3','player') ){  
+        IFrame();
+ }
+ if ( myHitOther('beam','player') ){  
+        IFrame();
+ }
+ if ( myHitOther('beam2','player') ){  
+        IFrame();
+ }
+ if ( myHitOther('beam3','player') ){  
+        IFrame();
+ }
+ if ( myHitOther('gold','player') ){  
+        IFrame();
+ }
+ if ( myHitOther('gold2','player') ){  
+        IFrame();
+ }
+ if ( myHitOther('gold','pillarT4') ){  
+       document.getElementById('gold').style.top = parseInt(document.getElementById('gold').style.top) + 10 + 'px';
+}
+ if ( myHitOther('gold2','pillarT3') ){  
+       document.getElementById('gold2').style.top = parseInt(document.getElementById('gold2').style.top) + 10 + 'px';
+ }
+ if ( myHitOther('gold2','pillarL1') ){  
+       document.getElementById('gold').style.top = 20 + 'px'
+       document.getElementById('gold').style.left = 570 + 'px'
+       document.getElementById('gold2').style.top = 25 + 'px'
+       document.getElementById('gold2').style.left = 670 + 'px'
  }
 }
 
@@ -149,7 +185,7 @@ var health = 1000;
 function ouch() {
    setTimeout(ouch2, 2000)
     if (health <= 0) {
-    document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 1000 + 'px' 
+    document.getElementById('boss').style.left = parseInt(document.getElementById('boss').style.left) - 1000 + 'px' 
    } else {
     
   }  
@@ -161,36 +197,44 @@ function ouch2() {
 
 function phase() {
   if ((health <= 750) && (health >= 501)) {
-    document.getElementById('myImg01').src = "KoTP2.png"
+    document.getElementById('boss').src = "KoTP2.png"
   } else if ((health <= 500) && (health >= 251)){
-    document.getElementById('myImg01').src = "KoTP3.png"
+    document.getElementById('boss').src = "KoTP3.png"
   } else if ((health <= 250) && (health >= 1)) {
-    document.getElementById('myImg01').src = "KoTP4.png"
+    document.getElementById('boss').src = "KoTP4.png"
   }
   healthBar()
 }
 
 function healthBar() {
   document.getElementById('HealthBar').style.width = health + 'px'
-}
 
-//function Bruh() {
-//}
+}
 
 function IFrame() {
   
   document.getElementById('playerI').style.left = parseInt(document.getElementById('player').style.left)
   document.getElementById('playerI').style.top = parseInt(document.getElementById('player').style.top)
-  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 1000 + 'px'
+  document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 10000 + 'px'
+  noise();
   setTimeout(Hit, 1000)
   setTimeout(Back, 1000)
 }
-
+function noise() {
+  let m = Math.floor((Math.random() * 3) + 1);
+  if (m = 1) {
+    mySound2.play()
+  } else if (m = 2) {
+    mySound3.play()
+  } else if (m = 3) {
+    mySound4.play()
+  }
+}
 
 function Back() {
   document.getElementById('player').style.left = parseInt(document.getElementById('playerI').style.left)
   document.getElementById('player').style.top = parseInt(document.getElementById('playerI').style.top)
-  document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) - 1000 + 'px'
+  document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) - 10000 + 'px'
 }
 </script>
 
@@ -205,6 +249,7 @@ function Back() {
 //Put other things every frame here (enemies moving, traps, etc)
    myCheckHit();
    timer1();
+   healthBar();
 }">
 
 <input id="btnSt" type=hidden value="Start" onclick="{
@@ -217,45 +262,209 @@ function Back() {
 
 <script>
 function timer1() {
-let t = Math.floor((Math.random() * 100) + 1);
-if (t <= 20) {
-   badMove()
-} else {
-   
+  let d = Math.floor((Math.random() * 100) + 1);
+  if (d > 90) {
+    timer2()
+  } else {
+
+  }
 }
 
+function timer2() {
+  if (health > 751) {
+    speed1();
+    mySound10.play();
+  }else if ((health <= 750) && (health >= 501)) {
+    speed2();
+    mySound11.play();
+  } else if ((health <= 500) && (health >= 251)){
+    speed3();
+    mySound12.play();
+  } else if ((health <= 250) && (health >= 1)) {
+    speed4();
+    mySound13.play();
+  } else if (health < 0) {
+    document.getElementById('boss').src = "bossDead.png";
+    document.getElementById('HealthBar').style.top = - 100 + 'px';
+    setTimeout(end, 3000);
+  }
+}
+
+function end() {
+  window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/end.html");
+}
+
+function speed1() {
+  let t = Math.floor((Math.random() * 100) + 1);
+  if (t < 1) {
+    attack1()
+  } else if ((t >= 1) && (t <= 2)) {
+    attack2()
+  } else if ((t >= 3) && (t <= 4)){
+    attack3()
+  } else if ((t >= 4) && (t <= 6)) {
+    attack4()
+  } else if ((t >= 7) && (t <= 100)) {
+    idle() //40%
+  }
+}
+
+function speed2() {
+  let t = Math.floor((Math.random() * 100) + 1);
+  if (t < 2) {
+    attack1()
+  }else if ((t >= 2) && (t <= 4)) {
+    attack2()
+  } else if ((t >= 5) && (t <= 7)){
+    attack3()
+  } else if ((t >= 8) && (t <= 10)) {
+    attack4()
+  } else if ((t >= 11) && (t <= 100)) {
+    idle() //30%
+  }
+}
+
+function speed3() {
+  let t = Math.floor((Math.random() * 100) + 1);
+  if (t < 4) {
+    attack1()
+  }else if ((t >= 4) && (t <= 8)) {
+    attack2()
+  } else if ((t >= 9) && (t <= 13)){
+    attack3()
+  } else if ((t >= 14) && (t <= 18)) {
+    attack4()
+  } else if ((t >= 19) && (t <= 100)) {
+    idle() //20%
+  }
+}
+
+function speed4() {
+  let t = Math.floor((Math.random() * 100) + 1);
+  if (t < 6) { //25
+    attack1()
+  }else if ((t >= 6) && (t <= 12)) { //
+    attack2()
+  } else if ((t >= 13) && (t <= 25)){ // 19
+    attack3()
+  } else if ((t >= 26) && (t <= 38)) { //14
+    attack4()
+  } else if ((t >= 39) && (t <= 100)) {
+    idle() //15%
+  }
+}
+
+function attack1() {
+  document.getElementById('boss').style.left = 580 + 'px'
+  document.getElementById('boss').style.top = 0 + 'px'
+  bombs()
+}
+function bombs() {
+  mySound15.play();
+  let x1 = Math.floor((Math.random() * 1280) + 1);
+  let y1 = Math.floor((Math.random() * 600) + 1);
+  let x2 = Math.floor((Math.random() * 1280) + 1);
+  let y2 = Math.floor((Math.random() * 600) + 1);
+  let x3 = Math.floor((Math.random() * 1280) + 1);
+  let y3 = Math.floor((Math.random() * 600) + 1);
+  document.getElementById('bomb').style.left = x1 + 'px';
+  document.getElementById('bomb').style.top = y1 + 'px';
+  document.getElementById('bomb2').style.left = x2 + 'px';
+  document.getElementById('bomb2').style.top = y2 + 'px';
+  document.getElementById('bomb3').style.left = x3 + 'px';
+  document.getElementById('bomb3').style.top = y3 + 'px';
+  setTimeout(explode, 1000)
+}
+function explode() {
+  mySound14.play();
+  document.getElementById('fire').style.left = document.getElementById('bomb').style.left
+  document.getElementById('fire').style.top = document.getElementById('bomb').style.top
+  document.getElementById('fire2').style.left = document.getElementById('bomb2').style.left
+  document.getElementById('fire2').style.top = document.getElementById('bomb2').style.top
+  document.getElementById('fire3').style.left = document.getElementById('bomb3').style.left
+  document.getElementById('fire3').style.top = document.getElementById('bomb3').style.top
+  setTimeout(gone, 1000)
+}
+function gone() {
+  document.getElementById('bomb').style.left = -100 + 'px'
+  document.getElementById('bomb2').style.left = -100 + 'px'
+  document.getElementById('bomb3').style.left = -100 + 'px'
+  document.getElementById('fire').style.left = -100 + 'px'
+  document.getElementById('fire2').style.left = -100 + 'px'
+  document.getElementById('fire3').style.left = -100 + 'px'
+}
+
+function attack2() {
+  document.getElementById('boss').style.left = 580 + 'px'
+  document.getElementById('boss').style.top = 0 + 'px'
+  laser()
+}
+function laser() {
+  let h = Math.floor((Math.random() * 600) + 1);
+  let h2 = Math.floor((Math.random() * 600) + 1);
+  let h3 = Math.floor((Math.random() * 600) + 1);
+  document.getElementById('laser').style.top = h + 'px'
+  document.getElementById('laser2').style.top = h2 + 'px'
+  document.getElementById('laser3').style.top = h3 + 'px'
+  setTimeout(beam, 1500)
+}
+function beam() {
+  document.getElementById('beam').style.top = parseInt(document.getElementById('laser').style.top) - 5 + 'px'
+  document.getElementById('beam2').style.top = parseInt(document.getElementById('laser2').style.top) - 5 + 'px'
+  document.getElementById('beam3').style.top = parseInt(document.getElementById('laser3').style.top) - 5 + 'px'
+  setTimeout(gone2, 500)
+  
+}
+function gone2() {
+  document.getElementById('laser').style.top = -100 + 'px'
+  document.getElementById('laser2').style.top = -100 + 'px'
+  document.getElementById('laser3').style.top = -100 + 'px'
+  document.getElementById('beam').style.top = -100 + 'px'
+  document.getElementById('beam2').style.top = -100 + 'px'
+  document.getElementById('beam3').style.top = -100 + 'px'
+}
+
+function attack3() {
+  document.getElementById('boss').style.left = 25 + 'px'
+  document.getElementById('boss').style.top = 330 + 'px'
+  gold()
+}
+
+function gold() {
+  u = Math.floor((Math.random() * 550) + 1);
+  u2 = Math.floor((Math.random() * 550) + 1);
+  u3 = u2 + 650
+  document.getElementById('gold').style.left = u
+  document.getElementById('gold2').style.left = u3
+
+}
+
+function attack4() {
+  document.getElementById('boss').style.left = 1130 + 'px'
+  document.getElementById('boss').style.top = 330 + 'px'
+  bombs()
+
+}
+function idle() {
+  document.getElementById('boss').style.top = document.getElementById('boss').style.top
+  document.getElementById('boss').style.left = document.getElementById('boss').style.left
 }
 </script>
+
 
 <script>
 function myLoad() {
  document.getElementById('btnSt').click();
- document.getElementById('btnSt2').click();
  load()
- NumHearts();
 }
 </script>
 
 <script>
-function badMove() {
-let h = Math.floor((Math.random() * 6) + 1);
-if (h == 1) {
-  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 5 + 'px'
-}else if (h == 2){
-  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 5 + 'px'
-}else if (h == 3){
-  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 5 + 'px'
-}else if (h == 4){
-  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 5 + 'px'
-}else{
-  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left)
-}
-}
+
 
 </script>
 <script>
 function randomRoom() {
-document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 1000 + 'px';
 let r = Math.floor((Math.random() * 100) + 1);
 if ((r >= 1) && (r <= 50))  { 
     window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Room3.html");      
@@ -273,12 +482,10 @@ if ((r >= 1) && (r <= 50))  {
 <!-- objects -->
 <img id="pillarT1" style="position:absolute; width:64px; height:29px; top:180px; left:-925px; z-index:1" src="black.png">
 <img id="pillarT2" style="position:absolute; width:64px; height:29px; top:475px; left:-925px; z-index:1" src="black.png">
-<img id="pillarT3" style="position:absolute; width:64px; height:29px; top:180px; left:-370px; z-index:1" src="black.png">
-<img id="pillarT4" style="position:absolute; width:64px; height:29px; top:475px; left:-370px; z-index:1" src="black.png">
-<img id="player" style="position:absolute; width:50px; height:50px; top:400px; left:50px; z-index:1" src="evilHonda.png">
-<img id="playerI" style="position:absolute; width:50px; height:50px; top:400px; left:-1050px; z-index:0" src="TrollSad.png">
-<img id="myImg01" style="position:absolute; width:150px; height:150px; top:200px; left:610px;" src="KoTP1.png">
-<img id="baddie" style="position:absolute; width:1248px; height:120px; top:300px; left:0px;" src="Invisible.png">
+<img id="player" style="position:absolute; width:50px; height:50px; top: 535px; left: 620px; z-index:1" src="evilHonda.png">
+<img id="playerI" style="position:absolute; width:50px; height:50px; top:400px; left:-10050px; z-index:0" src="TrollSad.png">
+<img id="boss" style="position:absolute; width:150px; height:150px; top:200px; left:610px;" src="KoTP1.png">
+<img id="baddie" style="position:absolute; width:1248px; height:120px; top:300px; left:-10000px;" src="Invisible.png">
 <img id="PwallB" style="position:absolute; width:1248px; height:60px; top:0px; left:0px;" src="Invisible.png">
 <img id="PwallT" style="position:absolute; width:1248px; height:100px; top:700px; left:0px;" src="Invisible.png">
 <img id="PwallL" style="position:absolute; width:40px; height:700px; top:0px; left:0px;" src="Invisible.png">
@@ -293,9 +500,12 @@ if ((r >= 1) && (r <= 50))  {
 <img id="pillarB4" style="position:absolute; width:65px; height:20px; top:-567px; left:370px;" src="Invisible.png">
 <img id="pillarT1" style="position:absolute; width:65px; height:20px; top:-210px; left:925px;" src="Invisible.png">
 <img id="pillarT2" style="position:absolute; width:65px; height:20px; top:-505px; left:925px;" src="Invisible.png">
-<img id="pillarT3" style="position:absolute; width:65px; height:20px; top:-210px; left:370px;" src="Invisible.png">
-<img id="pillarT4" style="position:absolute; width:65px; height:20px; top:-505px; left:370px;" src="Invisible.png">
-<img id="pillarL1" style="position:absolute; width:1px; height:65px; top:-215px; left:925px;" src="Invisible.png">
+
+<img id="pillarT3" style="position:absolute; width:550px; height:720px; top:0px; left:730px;" src="Invisible.png">
+<img id="pillarT4" style="position:absolute; width:550px; height:720px; top:0px; left:0px;" src="Invisible.png">
+
+<img id="pillarL1" style="position:absolute; width:1280px; height:20px; top:730px; left:0px;" src="Invisible.png">
+
 <img id="pillarL2" style="position:absolute; width:1px; height:65px; top:-510px; left:925px;" src="Invisible.png">
 <img id="pillarL3" style="position:absolute; width:1px; height:65px; top:-215px; left:370px;" src="Invisible.png">
 <img id="pillarL4" style="position:absolute; width:1px; height:65px; top:-510px; left:370px;" src="Invisible.png">
@@ -316,6 +526,21 @@ if ((r >= 1) && (r <= 50))  {
 <img id="FrameR" style="position:absolute; width:600px; height:100px; top:605px; left:93px; z-index:0" src="FrameR.png">
 <img id="FrameL" style="position:absolute; width:600px; height:100px; top:605px; left:565px; z-index:0" src="FrameL.png">
 <img id="FrameM" style="position:absolute; width:600px; height:100px; top:605px; left:130px; z-index:0" src="FrameM.png">
+<img id="bomb" style="position:absolute; width:50px; height:50px; top:-605px; left:130px; z-index:0" src="bomb.png">
+<img id="bomb2" style="position:absolute; width:50px; height:50px; top:-605px; left:130px; z-index:0" src="bomb.png">
+<img id="bomb3" style="position:absolute; width:50px; height:50px; top:-605px; left:130px; z-index:0" src="bomb.png">
+<img id="fire" style="position:absolute; width:100px; height:100px; top:-605px; left:130px; z-index:0" src="explode.png">
+<img id="fire2" style="position:absolute; width:100px; height:100px; top:-605px; left:130px; z-index:0" src="explode.png">
+<img id="fire3" style="position:absolute; width:100px; height:100px; top:-605px; left:130px; z-index:0" src="explode.png">
+<img id="laser" style="position:absolute; width:1280px; height:10px; top:-605px; left:0px; z-index:0" src="laser.png">
+<img id="laser2" style="position:absolute; width:1280px; height:10px; top:-605px; left:0px; z-index:0" src="laser.png">
+<img id="laser3" style="position:absolute; width:1280px; height:10px; top:-605px; left:0px; z-index:0" src="laser.png">
+<img id="beam" style="position:absolute; width:1280px; height:20px; top:-605px; left:0px; z-index:0" src="beam.png">
+<img id="beam2" style="position:absolute; width:1280px; height:20px; top:-605px; left:0px; z-index:0" src="beam.png">
+<img id="beam3" style="position:absolute; width:1280px; height:20px; top:-605px; left:0px; z-index:0" src="beam.png">
+<img id="gold" style="position:absolute; width:50px; height:50px; top:20px; left:570px; z-index:0" src="gold troll.png">
+<img id="gold2" style="position:absolute; width:50px; height:50px; top:25px; left:670px; z-index:0" src="gold troll inv.png">
+
 
 </body>
 </html>
