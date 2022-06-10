@@ -17,6 +17,7 @@ let mySound16 = new Audio('honda.mp3')
 let mySound17 = new Audio('go.mp3')
 let mySound18 = new Audio('laser.mp3')
 let mySound19 = new Audio('goldtroll.mp3')
+let mySound20 = new Audio('pullup.mp3')
 
 
 mySound8.volume = 0.25;
