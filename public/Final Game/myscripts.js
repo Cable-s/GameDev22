@@ -14,6 +14,8 @@ let mySound13 = new Audio('BossMusic4.mp3')
 let mySound14 = new Audio('bombexplode.mp3')
 let mySound15 = new Audio('bomb_warning.mp3')
 let mySound16 = new Audio('honda.mp3')
+let mySound17 = new Audio('go.mp3')
+
 
 mySound8.volume = 0.25;
 mySound7.volume = 0.25;
@@ -24,7 +26,7 @@ mySound10.volume = 0.15;
 mySound11.volume = 0.15;
 mySound12.volume = 0.15;
 mySound13.volume = 0.05;
-
+mySound17.volume = 0.20;
 
 
 
@@ -186,7 +188,7 @@ function moving(event) {
    }
    
    function attM() {
-     document.getElementById('attackT').style.left = parseInt(document.getElementById('attackT').style.left) - 10000 + 'px'
-     document.getElementById('attackD').style.left = parseInt(document.getElementById('attackD').style.left) - 10000 + 'px'
-     document.getElementById('attackL').style.left = parseInt(document.getElementById('attackL').style.left) - 10000 + 'px'
-     document.getElementById('attackR').style.left = parseInt(document.getElementById('attackR').style.left) - 10000 + 'px'}
+     document.getElementById('attackT').style.left = parseInt(document.getElementById('attackT').style.left) - 1000 + 'px'
+     document.getElementById('attackD').style.left = parseInt(document.getElementById('attackD').style.left) - 1000 + 'px'
+     document.getElementById('attackL').style.left = parseInt(document.getElementById('attackL').style.left) - 1000 + 'px'
+     document.getElementById('attackR').style.left = parseInt(document.getElementById('attackR').style.left) - 1000 + 'px'}

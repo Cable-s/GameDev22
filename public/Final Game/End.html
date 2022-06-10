@@ -145,6 +145,9 @@ function myCheckHit(){
  if ( myHitOther('boss','attackR') ){  
          ouch();
  }
+ if ( myHitOther('player','honda') ){  
+        GetIn();
+ }
 }
 
 var health = 1000;
@@ -229,7 +232,7 @@ function ellis() {
 }
 
 function goodJob() {
-  alert('Congratulations on beating the Lord of Trolls! come on let\'s go');
+  alert('Congratulations on beating the Lord of Trolls! come on let\'s go, get in the Honda!');
   playhonda();
   setTimeout(Honda, 500)
 }
@@ -237,7 +240,6 @@ function goodJob() {
 function Honda() {
   playhonda();
   document.getElementById('honda').style.left = -40 + 'px'
-  setTimeout(GetIn, 2000)
 }
 
 function playhonda() {
@@ -256,7 +258,12 @@ function drive() {
   setTimeout(endScreen, 2000)
 }
 function endScreen() {
-  window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/endscreen.html");   
+  document.getElementById('boss').style.left = -1000 + 'px'
+  document.getElementById('heart1').style.left = -1000 + 'px'
+  document.getElementById('heart2').style.left = -1000 + 'px'
+  document.getElementById('heart3').style.left = -1000 + 'px'
+  document.getElementById('room').src = "endscreen.png"
+  mySound17.play();
 }
 
 </script>
