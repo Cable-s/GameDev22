@@ -186,7 +186,7 @@ function moving(event) {
    }
    
    function attM() {
-     document.getElementById('attackT').style.left = parseInt(document.getElementById('attackT').style.left) - 1000 + 'px'
-     document.getElementById('attackD').style.left = parseInt(document.getElementById('attackD').style.left) - 1000 + 'px'
-     document.getElementById('attackL').style.left = parseInt(document.getElementById('attackL').style.left) - 1000 + 'px'
-     document.getElementById('attackR').style.left = parseInt(document.getElementById('attackR').style.left) - 1000 + 'px'}
+     document.getElementById('attackT').style.left = parseInt(document.getElementById('attackT').style.left) - 10000 + 'px'
+     document.getElementById('attackD').style.left = parseInt(document.getElementById('attackD').style.left) - 10000 + 'px'
+     document.getElementById('attackL').style.left = parseInt(document.getElementById('attackL').style.left) - 10000 + 'px'
+     document.getElementById('attackR').style.left = parseInt(document.getElementById('attackR').style.left) - 10000 + 'px'}
