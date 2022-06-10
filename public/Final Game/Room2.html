@@ -222,6 +222,7 @@ function IFrame() {
   document.getElementById('playerI').style.top = parseInt(document.getElementById('player').style.top)
   document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 10000 + 'px'
   noise();
+  setTimeout(Hit, 1000)
   setTimeout(Back, 1000)
 }
 function noise() {
@@ -236,9 +237,9 @@ function noise() {
 }
 
 function Back() {
-    mySound1.play()
-    alert("You Died");
-    window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Title.html");  
+  document.getElementById('player').style.left = parseInt(document.getElementById('playerI').style.left)
+  document.getElementById('player').style.top = parseInt(document.getElementById('playerI').style.top)
+  document.getElementById('playerI').style.left = parseInt(document.getElementById('playerI').style.left) - 10000 + 'px' 
 }
 </script>
 
