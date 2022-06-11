@@ -114,7 +114,9 @@ function moving(event) {
    if (myKey === 'f') {
       att();
    }
-   
+   if (myKey === 'r') {
+      restart();
+   }
    }
    
    function moveU(){
@@ -196,4 +198,7 @@ function moving(event) {
      document.getElementById('attackD').style.left = - 10000 + 'px'
      document.getElementById('attackL').style.left = - 10000 + 'px'
      document.getElementById('attackR').style.left = - 10000 + 'px'
+   }
+   function restart() {
+      window.location.replace("https://calebmemememe.github.io/GameDev22/public/Final%20Game/Title.html");
    }
